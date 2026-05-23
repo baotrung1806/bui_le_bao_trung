@@ -1,14 +1,9 @@
-import { ButtonCustom } from "@/components/ButtonCustom";
-import { useTranslation } from "@/utils";
+import { MySelfSection } from "./components/MySelfSection";
 
 export const BaoTrung = () => {
-  const t = useTranslation();
   return (
-    <>
-      <ButtonCustom value={t("hello_bao_trung")} />
-    </>
+    <div>
+      <MySelfSection />
+    </div>
   );
 };
-
-
-
