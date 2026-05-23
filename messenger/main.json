@@ -1,0 +1,26 @@
+{
+	"myself": {
+		"fullname": "Bui Le Bao Trung",
+		"nickname": "Tom",
+		"address": "Hanoi, Vietnam",
+		"education": {
+			"first": {
+				"label": "Master of Business Administration - Marketing",
+				"subLabel": "@National Economics University"
+			},
+			"second": {
+				"label": "Bachelor of Tourism and Travel Management",
+				"subLabel": "@University of Toulon"
+			},
+			"third": {
+				"label": "IELTS 7.0 / MOS Specialist",
+				"subLabel": "@British Council / IIG"
+			}
+		},
+		"headline": "Hello, my name is",
+		"title": "A creative soul passionate about",
+		"subTitle": "social media & marketing",
+		"downloadCV": "Download CV",
+		"contact": "Contact me"
+	}
+}

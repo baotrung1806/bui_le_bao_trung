@@ -1,5 +1,5 @@
-import SideBar from "./components/SideBar";
-import BaoTrung from "./pages/BaoTrung";
+import { SideBar } from "./components/SideBar";
+import { BaoTrung } from "./pages/BaoTrung";
 
 function App() {
   return (
