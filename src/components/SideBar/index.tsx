@@ -38,7 +38,7 @@ const MENU_ITEMS = [
   },
 ];
 
-export default function SideBar() {
+export const SideBar = () => {
   return (
     <aside className="left-0 top-0 ml-[-25px] w-[200px] h-screen flex items-center justify-center">
       <ul className="flex flex-col items-center gap-4">
