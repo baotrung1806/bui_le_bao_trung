@@ -1,32 +1,16 @@
-import { ButtonCustom } from '@/components/ButtonCustom';
-import { useTranslation } from '@/utils';
+import MyselfPostcard from './MyselfPostcard';
 
-export const MySelfSection = () => {
-  const t = useTranslation('main.myself');
-
+const MySelfSection = () => {
   return (
-    <>
-      <div>
-        <form>
-          <p>{t('fullname')}</p>
-          <p>{t('nickname')}</p>
-          <p>{t('address')}</p>
-          <p>{t('education.first.label')}</p>
-          <span>{t('education.first.subLabel')}</span>
-          <p>{t('education.second.label')}</p>
-          <span>{t('education.second.subLabel')}</span>
-          <p>{t('education.third.label')}</p>
-          <span>{t('education.third.subLabel')}</span>
-        </form>
+    <div className="min-h-screen flex items-center justify-center ml-[90px] mt-[-70px] p-10 overflow-x-hidden">
+      <div className="relative w-full max-w-screen-2xl flex flex-col md:flex-row items-center">
+        {/* Khu vực bưu thiếp (Trái) */}
+          <MyselfPostcard />
+        {/* Khu vực thông tin (Phải) */}
+        {/* <MyselfInfo /> */}
       </div>
-      <div>
-        <p>{t('headline')}</p>
-        <p>{t('fullname')}</p>
-        <p>{t('title')}</p>
-        <span>{t('subTitle')}</span>
-        <ButtonCustom className="bg-[#E9D4B9] text-[#3C2F2F]" value={t('downloadCV')} />
-        <ButtonCustom className="bg-[#E9D4B9] text-[#3C2F2F]" value={t('contact')} />
-      </div>
-    </>
+    </div>
   );
 };
+
+export default MySelfSection;

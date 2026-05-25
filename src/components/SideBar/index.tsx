@@ -40,7 +40,7 @@ const MENU_ITEMS = [
 
 export const SideBar = () => {
   return (
-    <aside className="left-0 top-0 ml-[-25px] w-[200px] h-screen flex items-center justify-center">
+    <aside className="fixed left-0 top-0 ml-[-25px] w-[200px] h-screen flex items-center justify-center z-50">
       <ul className="flex flex-col items-center gap-4">
         {MENU_ITEMS.map((item) => (
           <li key={item.key}>
