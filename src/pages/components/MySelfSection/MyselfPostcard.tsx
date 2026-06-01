@@ -37,10 +37,7 @@ const MyselfPostcard = () => {
         className="absolute right-6 w-[250px] mr-[60px] mt-[20px] z-10"
       />
 
-      <img 
-        src={cardBg}
-        alt="Postcard"
-        className="w-full h-[720px] object-cover rotate-[-3deg]" />
+      <img src={cardBg} alt="Postcard" className="w-full h-[720px] object-cover rotate-[-3deg]" />
 
       <img
         src={vnMapImg}
@@ -54,37 +51,45 @@ const MyselfPostcard = () => {
         className="absolute inset-0 w-[400px] h-[720px] mt-[190px] ml-[-55px] object-cover z-3"
       />
 
-      <div className="absolute inset-0 mt-[400px] ml-[300px] z-20 p-10 font-main text-brand-dark">
+      <div className="absolute inset-0 ml-[300px] z-20 p-10 text-[#3C2F2F]">
         <p className="flex gap-2">
-          <span className="font-semibold text-brand-dark/80">From:</span>
-          <span>{t('fullname')}</span>
+          <span className="font-semibold font-['Syne'] rotate-[-3deg]">From:</span>
+          <span className="font-plus rotate-[-3deg]">{t('fullname')}</span>
         </p>
         <div className="flex items-center gap-4">
-          <p className="font-semibold text-brand-dark/80">but you can call me:</p>
-          <span className="border-2 border-brand-dark px-4 py-1.5 rounded-full text-base font-mono font-medium">
+          <p className="font-plus rotate-[-3deg]">but you can call me:</p>
+          <span className="border-2 border-brand-dark px-4 py-1.5 rounded-full text-base font-['Caveat'] font-bold">
             {t('nickname')}
           </span>
         </div>
         <p className="flex gap-2">
-          <span className="font-semibold text-brand-dark/80">Address:</span>
-          <span>{t('address')}</span>
+          <span className="font-semibold font-['Syne'] rotate-[-3deg]">Address:</span>
+          <span className="font-plus rotate-[-3deg]">{t('address')}</span>
         </p>
-        <div className="pt-8 space-y-4">
-          <h3 className="font-semibold text-lg text-brand-dark/90">Educational background:</h3>
-          <ul className="list-disc list-outside pl-6 space-y-2">
-            <li>
-              {t('education.first.label')}{' '}
-              <span className="font-mono text-sm opacity-80">{t('education.first.subLabel')}</span>
-            </li>
-            <li>
-              {t('education.second.label')}{' '}
-              <span className="font-mono text-sm opacity-80">{t('education.second.subLabel')}</span>
-            </li>
-            <li>
-              {t('education.third.label')}{' '}
-              <span className="font-mono text-sm opacity-80">{t('education.third.subLabel')}</span>
-            </li>
-          </ul>
+        <div className="pt-8">
+          <h3 className="font-semibold font-['Syne'] text-lg rotate-[-3deg]">
+            Educational background:
+          </h3>
+          <div className="text-[20px]">
+            <p className="flex flex-col items-end">
+                <span className="font-plus rotate-[-3deg] font-Regular text-right leading-tight">
+                  {t('education.first.label')}
+                  <span className="text-sm block">{t('education.first.subLabel')}</span>
+                </span>
+            </p>
+            <p className="flex flex-col items-end">
+              <span className="font-plus rotate-[-3deg] font-Regular text-right leading-tight">
+                {t('education.second.label')}
+                <span className="text-sm block">{t('education.second.subLabel')}</span>
+              </span>
+            </p>
+            <p className="flex flex-col items-end">
+              <span className="font-plus rotate-[-3deg] font-Regular text-right leading-tight">
+                {t('education.third.label')}
+                <span className="text-sm block">{t('education.third.subLabel')}</span>
+              </span>
+            </p>
+          </div>
         </div>
       </div>
 
