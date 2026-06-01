@@ -104,7 +104,7 @@ const MyselfPostcard = () => {
             Educational background:
           </h3>
 
-          <div className="flex flex-col gap-6 text-[19px] mr-[22px]">
+          <div className="flex flex-col gap-6 text-[19px] mr-[7px]">
             {EDUCATION_KEYS.map(({ key, className }) => (
               <p
                 key={key}
