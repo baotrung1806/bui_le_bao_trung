@@ -5,12 +5,15 @@ type ButtonCustomProps = {
   className?: string;
 };
 
-export const ButtonCustom = ({
-    value,
-    className
-}: ButtonCustomProps) => {
+export const ButtonCustom = ({ value, className }: ButtonCustomProps) => {
   return (
-    <button className={cn('text-[32px] px-4 py-2 rounded-[20px] font-bold shadow-lg', className)}>
+    <button
+      className={cn('text-[32px] w-[236px] h-[64px] rounded-[20px] shadow-lg cursor-pointer', className)}
+      style={{
+        fontFamily: 'Caveat, cursive',
+        fontWeight: 700,
+      }}
+    >
       {value}
     </button>
   );

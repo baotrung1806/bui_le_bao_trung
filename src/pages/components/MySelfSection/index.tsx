@@ -1,7 +1,15 @@
-export const MySelfSection = () => {
+import MyselfInfo from './MyselfInfo';
+import MyselfPostcard from './MyselfPostcard';
+
+const MySelfSection = () => {
   return (
-    <section className="w-full h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">MySelf Section</h1>
-    </section>
+    <div className="min-h-screen flex items-center justify-center ml-[90px] mt-[-70px] p-10 translate-x-[90px]">
+        {/* Khu vực bưu thiếp (Trái) */}
+        <MyselfPostcard />
+        {/* Khu vực thông tin (Phải) */}
+        <MyselfInfo />
+    </div>
   );
 };
+
+export default MySelfSection;
