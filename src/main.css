@@ -3,7 +3,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-:root { --font-plus: 'Plus Jakarta Sans'; }
+:root {
+  --font-plus: 'Plus Jakarta Sans';
+  --scrollbar-thumb: #8b7e73;
+  --scrollbar-track: transparent;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
 
 @layer components {
   .font-plus { font-family: var(--font-plus); }
