@@ -1,14 +1,13 @@
+import MyselfInfo from './MyselfInfo';
 import MyselfPostcard from './MyselfPostcard';
 
 const MySelfSection = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center ml-[90px] mt-[-70px] p-10">
-      <div className="relative w-full max-w-screen-2xl flex flex-col md:flex-row items-center">
+    <div className="min-h-screen flex items-center justify-center ml-[90px] mt-[-70px] p-10 translate-x-[90px]">
         {/* Khu vực bưu thiếp (Trái) */}
-          <MyselfPostcard />
+        <MyselfPostcard />
         {/* Khu vực thông tin (Phải) */}
-        {/* <MyselfInfo /> */}
-      </div>
+        <MyselfInfo />
     </div>
   );
 };

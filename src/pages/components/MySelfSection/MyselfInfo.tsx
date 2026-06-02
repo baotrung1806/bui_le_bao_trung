@@ -1,25 +1,42 @@
-import brushPenImg from '../../../assets/images/myself/BrushPen.webp';
+// import brushPenImg from '../../../assets/images/myself/BrushPen.webp';
+import penImg from '../../../assets/images/myself/Pen.webp';
 import { ButtonCustom } from '@/components/ButtonCustom';
+import SignatureIcon from '@/components/Icons/SignatureIcon';
 import { useTranslation } from '@/utils';
 
 const MyselfInfo = () => {
   const t = useTranslation('main.myself');
+  const classes = {
+    container: 'flex flex-col w-full md:w-2/5 items-center mt-[-75px] text-[#3C2F2F] translate-x-[60px]',
+    content: 'mr-[180px] block',
+    headline: 'text-[48px] font-plus',
+    pen: 'absolute w-[80px] mt-[-10px] ml-[-30px]',
+    nameWrap: 'mt-[10px]',
+    name: "text-[80px] font-['Caveat'] font-bold",
+    signature: 'absolute mt-[-60px] ml-[-50px]',
+    title: 'text-[32px] font-plus mt-[100px]',
+    subTitle: "text-[48px] font-['Caveat'] font-bold text-[#0057FF] text-center w-full",
+    actions: 'flex gap-25 mt-[50px] mr-[170px]',
+  };
   return (
-    <div className="flex flex-col w-full md:w-2/5 items-center font-main text-brand-dark space-y-8 pr-10 text-[#3C2F2F]">
-      <p className="text-[48px] font-plus">{t('headline')}</p>
-      <div className="relative text-center">
+    <div className={classes.container}>
+      <div className={classes.content}>
+        <p className={classes.headline}>{t('headline')}</p>
         <img
-          src={brushPenImg}
+          src={penImg}
           alt="Pen"
-          className="absolute w-[100px]"
+          className={classes.pen}
         />
-        <h1 className="text-[80px] font-['Caveat'] font-bold pb-2">
-          {t('fullname')}
-        </h1>
+        <div className={classes.nameWrap}>
+          <h1 className={classes.name}>
+            {t('fullname')}
+          </h1>
+          <SignatureIcon className={classes.signature} />
+        </div>
+        <p className={classes.title}>{t('title')}</p>
+        <p className={classes.subTitle}>{t('subTitle')}</p>
       </div>
-      <p className="text-[32px] font-plus">{t('title')}</p>
-      <p className="text-[48px] font-['Caveat'] font-bold text-[#0057FF]">{t('subTitle')}</p>
-      <div className="flex gap-10">
+      <div className={classes.actions}>
         <ButtonCustom className="bg-[#E9D4B9]" value={t('downloadCV')} />
         <ButtonCustom className="bg-[#E9D4B9]" value={t('contact')} />
       </div>

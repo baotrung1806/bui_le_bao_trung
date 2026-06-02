@@ -8,7 +8,7 @@ type ButtonCustomProps = {
 export const ButtonCustom = ({ value, className }: ButtonCustomProps) => {
   return (
     <button
-      className={cn('text-[32px] w-[236px] h-[64px] rounded-[20px] shadow-lg', className)}
+      className={cn('text-[32px] w-[236px] h-[64px] rounded-[20px] shadow-lg cursor-pointer', className)}
       style={{
         fontFamily: 'Caveat, cursive',
         fontWeight: 700,
