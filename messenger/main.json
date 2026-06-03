@@ -23,7 +23,29 @@
 		"downloadCV": "Download CV",
 		"contact": "Contact me"
 	},
-
+	"service": {
+		"headline": "MY SERVICES",
+		"items": {
+			"first": {
+				"title": "Video Editing",
+				"subTitle_1": "Hook your audience with flawless pacing and cinematic visuals. Transforming raw footage into explosive content for YouTube, Reels, and TikTok.",
+				"subTitle_2": "Specializing in: Vlogs, Travel, Reviews, Talking Head, F&B, Online Courses...",
+				"hastag": "#Premiere #Capcut #VisualStorytelling"
+			},
+			"second": {
+				"title": "AI Workflow Automation",
+				"subTitle_1": "Leveraging Agentic AI to automate content creation—from visual ideas to smart scripts, saving 80% of your production time.",
+				"subTitle_2": "Specializing in: Image/Video Workflow Automation, Content Creation",
+				"hastag": "#AIWorkflow #Gemini #MagnificFreepik"
+			},
+			"third": {
+				"title": "Content Planning",
+				"subTitle_1": "Driven by market research and user insights to build sustainable content roadmaps that boost conversions and brand awareness.",
+				"subTitle_2": "Specializing in: Lifestyle, Food & Beverage, Music, and Football",
+				"hastag": "#Strategy #ViralGrowth #MarketResearch"
+			}
+		}
+	},
 	"contact": {
 		"headline": "HEY!",
 		"title": "Let’s create something",

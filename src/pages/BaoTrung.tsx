@@ -1,6 +1,7 @@
-import MySelfSection from "./components/MySelfSection";
 import ropeImg from "../assets/images/common/Rope.webp";
-import { ContactSection } from "./components/ContactSection";
+import MySelfSection from "./components/MySelfSection";
+import ContactSection from "./components/ContactSection";
+import ServiceSection from "./components/ServiceSection";
 
 export const BaoTrung = () => {
   return (
@@ -10,6 +11,12 @@ export const BaoTrung = () => {
         src={ropeImg}
         alt="Rope"
         className="mt-[60px] block"
+      />
+      <ServiceSection />
+      <img 
+        src={ropeImg}
+        alt="Rope"
+        className="block"
       />
       <ContactSection />
     </div>
