@@ -3,7 +3,7 @@ import { BaoTrung } from "./pages/BaoTrung";
 
 function App() {
   return (
-    <main>
+    <main className="bg-[#FBF9F4]">
       <SideBar />
       <BaoTrung />
     </main>
