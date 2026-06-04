@@ -20,46 +20,62 @@ const ServiceSection = () => {
       {
         src: editorImg,
         alt: "Editor Icon",
-        className: "absolute"
+        width: "95",
+        height: "95",
+        className: "absolute translate-y-[-5px] rotate-[-1.08deg]"
       },
       {
         src: pinImg,
         alt: "Pin Icon",
-        className: "absolute"
+        width: "40",
+        height: "40",
+        className: "absolute translate-x-[330px] translate-y-[-72px] rotate-[4deg]"
       },
       {
         src: takephotoImg,
         alt: "Takephoto Icon",
-        className: "absolute"
+        width: "150",
+        height: "150",
+        className: "absolute translate-x-[-125px] translate-y-[570px] rotate-[6deg]"
       },
     ],
     [
       {
         src: aiImg,
         alt: "AI Icon",
-        className: "absolute"
+        width: "100",
+        height: "100",
+        className: "absolute translate-x-[25px] translate-y-[-5px]"
       },
       {
         src: staplesImg,
         alt: "Staples Icon",
-        className: "absolute"
+        width: "124",
+        height: "124",
+        className: "absolute translate-x-[150px] translate-y-[-160px] rotate-[1.4deg]"
       },
       {
         src: robotImg,
         alt: "Robot Icon",
-        className: "absolute"
+        width: "130",
+        height: "130",
+        className: "absolute translate-x-[280px] translate-y-[-10px] rotate-[1.65deg]"
       },
     ],
     [
       {
         src: scriptsImg,
         alt: "Scripts Icon",
+        width: "98",
+        height: "98",
         className: "absolute"
       },
       {
         src: ideaImg,
         alt: "Idea Icon",
-        className: "absolute translate-x-[280px] translate-y-[-150px]"
+        width: "200",
+        height: "200",
+        className: "absolute translate-x-[280px] translate-y-[-130px]"
       },
     ],
   ];
@@ -103,6 +119,8 @@ const ServiceSection = () => {
                   key={img.src}
                   src={img.src}
                   alt={img.alt}
+                  width={img.width}
+                  height={img.height}
                   className={img.className}
                 />
               ))}
