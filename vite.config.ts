@@ -20,4 +20,5 @@ export default defineConfig({
       },
     },
   },
+  base: '/bui_le_bao_trung/',
 });
