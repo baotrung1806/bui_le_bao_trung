@@ -11,40 +11,40 @@ const JobSection = () => {
   const sectionsData = [
     {
       title: t('title1'),
-      pickX: '-185px', pickY: '-330px',
-      containerX: '-190px', containerY: '-260px',
+      pickX: '-185px', pickY: '-310px',
+      containerX: '-190px', containerY: '-240px',
       cards: [
         { rotateClass: 'rotate-[6deg]', translateClass: 'translate-x-[-85px] translate-y-[10px]', bgClass: 'bg-none', hasImg: false },
         { rotateClass: 'rotate-[2deg]', translateClass: 'translate-x-[-90px]', bgClass: 'bg-[#000000]', hasImg: false },
         { rotateClass: 'rotate-[-8deg]', translateClass: 'translate-x-[-80px]', bgClass: 'bg-white', hasImg: true, imgSrc: "" }
       ],
-      className: 'translate-x-[-285px] translate-y-[185px]'
+      className: 'translate-x-[-285px] translate-y-[195px]'
     },
     {
       title: t('title2'),
-      pickX: '260px', pickY: '-685px',
-      containerX: '210px', containerY: '-620px',
+      pickX: '260px', pickY: '-625px',
+      containerX: '210px', containerY: '-560px',
       cards: [
         { rotateClass: 'rotate-[15deg]', translateClass: 'translate-x-[-110px]', bgClass: 'bg-white', hasImg: true, imgSrc: "" },
         { rotateClass: 'rotate-[-10deg]', bgClass: 'bg-white', hasImg: true, imgSrc: "" }
       ],
-      className: 'translate-x-[120px] translate-y-[-170px]'
+      className: 'translate-x-[120px] translate-y-[-125px]'
     },
     {
       title: t('title3'),
-      pickX: '700px', pickY: '-1050px',
-      containerX: '685px', containerY: '-985px',
+      pickX: '700px', pickY: '-950px',
+      containerX: '685px', containerY: '-885px',
       cards: [
         { rotateClass: 'rotate-[8deg]', translateClass: 'translate-x-[-105px]', bgClass: 'bg-[#000000]', hasImg: false },
         { rotateClass: 'rotate-[-4deg]', translateClass: 'translate-x-[-78px]', bgClass: 'bg-none', hasImg: false },
         { rotateClass: 'rotate-0', translateClass: 'translate-x-[-90px]', bgClass: 'bg-white', hasImg: true, imgSrc: "" }
       ],
-      className: 'translate-x-[620px] translate-y-[-530px]'
+      className: 'translate-x-[620px] translate-y-[-445px]'
     }
   ];
 
   return (
-    <div className="flex flex-col inset-0 h-screen justify-around items-center">
+    <div className="flex flex-col inset-0 h-[90vh] justify-around items-center">
       {sectionsData.map((section, idx) => (
         <div key={idx}>
           <PhotoStack
