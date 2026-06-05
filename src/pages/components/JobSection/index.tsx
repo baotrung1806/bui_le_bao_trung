@@ -1,7 +1,9 @@
 import pickImg from "../../../assets/images/job/pick.webp";
 import boardImg from "../../../assets/images/job/board.webp";
+import labelImg from "../../../assets/images/common/Label.webp";
 import { useTranslation } from '@/utils';
 import PhotoStack from "@/components/PhotoStack";
+import PolaroidCard from "@/components/PolaroidCard";
 
 const JobSection = () => {
   const t = useTranslation('main.job');
@@ -61,14 +63,31 @@ const JobSection = () => {
         <img
           src={boardImg}
           alt="Board"
-          width={540}
-          height={540}
-          className="translate-x-[-500px] translate-y-[180px]"
+          width={570}
+          height={570}
+          className="translate-x-[-500px] translate-y-[190px]"
         />
-        <h1 className="absolute font-['Syne'] font-bold text-[96px] text-[#3C2F2F] translate-x-[-475px] translate-y-[-90px]">
+        <h1 className="absolute font-['Syne'] font-bold text-[96px] text-[#3C2F2F] translate-x-[-460px] translate-y-[-90px]">
           {t('headline')}
         </h1>
       </div>
+
+      <PolaroidCard
+        imageSrc={""}
+        imageAlt="Nội dung"
+        labelImgSrc={labelImg}
+        title={t('title4')}
+        className="translate-y-[15px]"
+      />
+
+      <PolaroidCard
+        imageSrc={""}
+        imageAlt="Nội dung"
+        labelImgSrc={labelImg}
+        title={t('title5')}
+        className="translate-x-[550px] translate-y-[15px]"
+        classNameTitle="ml-[-35px] min-w-[310px]"
+      />
     </div>
   );
 };
