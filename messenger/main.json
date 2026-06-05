@@ -23,6 +23,28 @@
 		"downloadCV": "Download CV",
 		"contact": "Contact me"
 	},
+	"job": {
+		"headline": "MY JOBS",
+		"title1": "Content Creator",
+		"title2": "Thumbnail Designer",
+		"title3": "Video Editor",
+		"title4": "AI Architect",
+		"title5": "Camera Operator"
+	},
+	"project": {
+		"headline": "MY PROJECTS",
+		"title1": "Bat Trang Village",
+		"subTitle1": "The “Bat Trang Pottery Village” project was my very first filmmaking and editing project.",
+		"title2": "Top I% Secret Event",
+		"subTitle2": "The 'Top 1% Secret' event helped me learn a lot and network with major local and international entrepreneurs.",
+		"title3": "Quang Phu Cau ",
+		"subTitle3": "My 'Quang Phu Cau Incense Village' project earned a perfect score in college and put this amazing place on the map.",
+		"title4": "Vietnamese Traditional Costume",
+		"subTitle4": "My main goal for this trip to Hue was to showcase the beauty and meaning of Vietnamese heritage attire to the world.",
+		"title5": "Ha Long Bay Tourism",
+		"subTitle5": "This is the moment I'm handing over the 'Ha Long Bay's Beauty' project to my client.",
+		"endline": "To be continued...."
+	},
 	"service": {
 		"headline": "MY SERVICES",
 		"items": {
