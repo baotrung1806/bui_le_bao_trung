@@ -28,5 +28,22 @@
 }
 
 @layer components {
-  .font-plus { font-family: var(--font-plus); }
+  .font-plus {
+    font-family: var(--font-plus);
+  }
+}
+
+html,
+body {
+
+  /* Cho Chrome, Safari và Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Cho IE, Edge cũ */
+  -ms-overflow-style: none;
+
+  /* Cho Firefox */
+  scrollbar-width: none;
 }

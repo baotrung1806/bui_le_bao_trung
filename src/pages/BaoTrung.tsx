@@ -7,7 +7,7 @@ import ProjectSection from "./components/ProjectSection";
 
 export const BaoTrung = () => {
   return (
-    <div className="w-full overflow-hidden flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
       <MySelfSection />
       <img 
         src={ropeImg}

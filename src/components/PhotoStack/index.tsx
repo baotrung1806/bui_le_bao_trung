@@ -42,7 +42,7 @@ const PhotoStack: React.FC<PhotoStackProps> = ({
         style={{
           transform: `translate(${pickX}, ${pickY})`
         }}
-        className="absolute z-[9999]"
+        className="absolute z-[11]"
       />
 
       {/* Cụm các tấm ảnh xếp chồng */}

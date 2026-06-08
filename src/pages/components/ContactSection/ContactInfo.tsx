@@ -45,9 +45,9 @@ const ContactInfo = () => {
     },
   ];
   return (
-    <div className="items-center">
+    <div className="items-center ml-[200px]">
       <h1 className="font-['Syne'] font-bold text-[96px] text-[#3C2F2F] translate-x-[-540px] translate-y-[110px]">{t("headline")}</h1>
-      <p className="absolute font-plus font-bold text-[64px] text-[#3C2F2F]
+      <p className="absolute w-300 font-plus font-bold text-[64px] text-[#3C2F2F]
       translate-x-[-540px] translate-y-[120px] tracking-wide">{t("title")}</p>
       <span className="absolute font-['Caveat'] font-bold text-[128px] text-[#0057FF] rotate-[-3deg]
       translate-x-[-250px] translate-y-[220px]">{t("subTitle")}</span>
