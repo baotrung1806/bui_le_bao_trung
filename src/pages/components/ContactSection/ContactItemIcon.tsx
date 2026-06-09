@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import itemsImg from "../../../assets/images/contact/Items.webp";
 import youtubeImg from "../../../assets/images/contact/icons/YoutubeIcon.webp";
 import linkinImg from "../../../assets/images/contact/icons/LinkinIcon.webp";
@@ -18,6 +18,7 @@ interface ContactIconItem {
   isModal?: boolean;
   width?: string;
   height?: string;
+  delay?: string; // Giữ delay để các nút không bị lắc đều tăm tắp
 }
 
 const contactIcons: ContactIconItem[] = [
@@ -26,21 +27,24 @@ const contactIcons: ContactIconItem[] = [
     src: youtubeImg,
     alt: "Youtube Icon",
     className: "absolute rotate-[14deg] translate-x-[70px]",
-    href: "https://youtube.com/@trungbui2003?si=37sd1eIMtjzi8Ewt"
+    href: "https://youtube.com/@trungbui2003?si=37sd1eIMtjzi8Ewt",
+    delay: "0s"
   },
   {
     id: "linkedin",
     src: linkinImg,
     alt: "Linkin Icon",
     className: "absolute rotate-[-21deg] translate-x-[500px] translate-y-[120px]",
-    href: "https://www.linkedin.com/in/bui-le-bao-trung?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+    href: "https://www.linkedin.com/in/bui-le-bao-trung?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    delay: "0.4s"
   },
   {
     id: "zalo",
     src: zaloImg,
     alt: "Zalo Icon",
     className: "absolute rotate-[27deg] translate-x-[200px] translate-y-[100px]",
-    isModal: true
+    isModal: true,
+    delay: "0.8s"
   },
   {
     id: "facebook",
@@ -49,14 +53,16 @@ const contactIcons: ContactIconItem[] = [
     width: "300",
     height: "300",
     className: "absolute rotate-[-11deg] translate-x-[400px] translate-y-[570px]",
-    href: "https://www.facebook.com/share/1BVgmR1UbT/?mibextid=wwXIfr"
+    href: "https://www.facebook.com/share/1BVgmR1UbT/?mibextid=wwXIfr",
+    delay: "1.2s"
   },
   {
     id: "whatsapp",
     src: whatsappImg,
     alt: "Whatsapp Icon",
     className: "rotate-[-11deg] translate-x-[-40px] translate-y-[600px]",
-    isModal: true
+    isModal: true,
+    delay: "1.6s"
   },
 ];
 
@@ -71,7 +77,9 @@ const ContactItemIcon: React.FC = () => {
       {contactIcons.map((icon) => {
         const buttonContent = (
           <button
-            className={`mt-[20px] cursor-pointer ${icon.className}`}
+            // Thêm class 'shake-item' từ file CSS riêng vào button
+            className={`mt-[20px] cursor-pointer shake-item ${icon.className}`}
+            style={{ animationDelay: icon.delay }}
             onClick={icon.isModal ? () => openModal(icon.id) : undefined}
           >
             <img src={itemsImg} width={200} height={210} alt="Items" />
