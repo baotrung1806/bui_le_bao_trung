@@ -1,5 +1,6 @@
 import penOldImg from "../../../assets/images/project/Pen_old.webp";
 import bookImg from "../../../assets/images/project/Book.webp";
+import pageImg from "../../../assets/images/project/Page.webp";
 import { useTranslation } from '@/utils';
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
@@ -15,6 +16,20 @@ const ProjectSection = () => {
         width={1377}
         height={1377}
         className=""
+      />
+      <img
+        src={pageImg}
+        alt="Page Left"
+        width={630}
+        height={650}
+        className="absolute h-229 translate-x-[50px]"
+      />
+      <img
+        src={pageImg}
+        alt="Page Right"
+        width={630}
+        height={650}
+        className="absolute h-229 translate-x-[665px]"
       />
       <LeftSection />
       <RightSection />

@@ -12,7 +12,7 @@ import { useTranslation } from '@/utils';
 const EDUCATION_KEYS = [
   { key: 'first', className: '' },
   { key: 'second', className: 'mr-[15px]' },
-  { key: 'third', className: 'mr-[175px]' },
+  { key: 'third', className: 'mr-[180px]' },
 ];
 
 const DECORATIVE_IMAGES = [
