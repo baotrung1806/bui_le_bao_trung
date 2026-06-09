@@ -77,7 +77,6 @@ const ContactItemIcon: React.FC = () => {
       {contactIcons.map((icon) => {
         const buttonContent = (
           <button
-            // Thêm class 'shake-item' từ file CSS riêng vào button
             className={`mt-[20px] cursor-pointer shake-item ${icon.className}`}
             style={{ animationDelay: icon.delay }}
             onClick={icon.isModal ? () => openModal(icon.id) : undefined}

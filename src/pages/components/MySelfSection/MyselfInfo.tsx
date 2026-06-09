@@ -3,9 +3,26 @@ import penImg from '../../../assets/images/myself/Pen.webp';
 import { ButtonCustom } from '@/components/ButtonCustom';
 import SignatureIcon from '@/components/Icons/SignatureIcon';
 import { useTranslation } from '@/utils';
+import { useLenis } from 'lenis/react';
+
+const SCROLL_CONFIG = {
+  target: '#contact-section',
+  duration: 4,
+  
+  // Công thức Speed Ramp (Ease-In-Out Quintic)
+  // Bắt đầu siêu chậm -> bứt tốc ở giữa -> phanh chậm lại từ từ khi đến đích
+  easing: (t: number) => {
+    return t < 0.5 ? 16 * Math.pow(t, 5) : 1 - Math.pow(-2 * t + 2, 5) / 2;
+  },
+  
+  immediate: false,
+};
 
 const MyselfInfo = () => {
   const t = useTranslation('main.myself');
+  const lenis = useLenis();
+
+  // ─── STYLES DEFINITION ───────────────────────────────────────────────────
   const classes = {
     container: 'flex flex-col w-full md:w-2/5 items-center mt-[-75px] text-[#3C2F2F] translate-x-[60px]',
     content: 'mr-[180px] block',
@@ -18,6 +35,19 @@ const MyselfInfo = () => {
     subTitle: "text-[48px] font-['Caveat'] font-bold text-[#0057FF] text-center w-full",
     actions: 'flex gap-25 mt-[50px] mr-[170px]',
   };
+
+  // ─── EVENT HANDLERS ──────────────────────────────────────────────────────
+  const handleScrollToContact = () => {
+    if (!lenis) return;
+    
+    // Gọi lệnh cuộn với toàn bộ cấu hình đã khai báo ở trên
+    lenis.scrollTo(SCROLL_CONFIG.target, {
+      duration: SCROLL_CONFIG.duration,
+      easing: SCROLL_CONFIG.easing,
+      immediate: SCROLL_CONFIG.immediate,
+    });
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.content}>
@@ -38,7 +68,12 @@ const MyselfInfo = () => {
       </div>
       <div className={classes.actions}>
         <ButtonCustom className="bg-[#E9D4B9]" value={t('downloadCV')} />
-        <ButtonCustom className="bg-[#E9D4B9]" value={t('contact')} />
+
+        <ButtonCustom
+          className="bg-[#E9D4B9]"
+          value={t('contact')}
+          onClick={handleScrollToContact}
+        />
       </div>
     </div>
   );

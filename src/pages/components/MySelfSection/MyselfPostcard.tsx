@@ -77,7 +77,7 @@ const MyselfPostcard = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={`hover:rotate-[3deg] duration-500 transform transition-transform ${classes.root}`}>
       {DECORATIVE_IMAGES.map((image) => (
         <img
           key={image.alt}
