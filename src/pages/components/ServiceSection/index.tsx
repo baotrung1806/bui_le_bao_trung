@@ -108,34 +108,36 @@ const ServiceSection = () => {
   ]
 
   return (
-    <div className="flex flex-col inset-0 h-screen text-[#3C2F2F] translate-x-[90px] translate-y-[90px]">
-      <h1 className="font-['Syne'] font-bold text-[96px] translate-x-[-20px] translate-y-[-90px]">{t("headline")}</h1>
-      <div className="flex flex-row gap-20">
-        {serviceItem.map((item, index) => (
-          <div className={`p-10 w-[480px] h-[699px] bg-[#E9D4B9] rounded-[20px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ${item.className}`}>
-            <div className="relative">
-              {imgItem[index]?.map((img) => (
-                <img
-                  key={img.src}
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  className={img.className}
-                />
-              ))}
+    <div className="h-screen">
+      <div className="flex flex-col inset-0 h-[95vh] text-[#3C2F2F] translate-x-[90px] translate-y-[20px]">
+        <h1 className="font-['Syne'] font-bold text-[96px] translate-x-[-20px] translate-y-[-90px]">{t("headline")}</h1>
+        <div className="flex flex-row gap-20 block">
+          {serviceItem.map((item, index) => (
+            <div className={`p-10 w-[480px] h-[699px] bg-[#E9D4B9] rounded-[20px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ${item.className}`}>
+              <div className="relative">
+                {imgItem[index]?.map((img) => (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    width={img.width}
+                    height={img.height}
+                    className={img.className}
+                  />
+                ))}
+              </div>
+              <img
+                src={vectorImg}
+                alt="Vector"
+                className={`mt-[120px] ${item.classNameImg}`}
+              />
+              <h1 className="font-plus font-bold text-[31px] mt-[20px]">{item.title}</h1>
+              <p className="font-plus text-[21px] mt-[40px]">{item.subTitle_1}</p>
+              <p className="font-plus text-[21px] mt-[40px]">{item.subTitle_2}</p>
+              <p className="font-['Caveat'] text-[#0057FF] text-[24px] translate-x-[40px] translate-y-[90px]">{item.hastag}</p>
             </div>
-            <img
-              src={vectorImg}
-              alt="Vector"
-              className={`mt-[120px] ${item.classNameImg}`}
-            />
-            <h1 className="font-plus font-bold text-[31px] mt-[20px]">{item.title}</h1>
-            <p className="font-plus text-[21px] mt-[40px]">{item.subTitle_1}</p>
-            <p className="font-plus text-[21px] mt-[40px]">{item.subTitle_2}</p>
-            <p className="font-['Caveat'] text-[#0057FF] text-[24px] translate-x-[40px] translate-y-[90px]">{item.hastag}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

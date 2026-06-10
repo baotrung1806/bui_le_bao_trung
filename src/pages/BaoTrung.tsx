@@ -12,25 +12,25 @@ export const BaoTrung = () => {
       <img 
         src={ropeImg}
         alt="Rope"
-        className="mt-[60px] block"
+        className="block w-full"
       />
       <JobSection />
       <img 
         src={ropeImg}
         alt="Rope"
-        className="block"
+        className="mt-[-150px] block w-full"
       />
       <ProjectSection />
       <img 
         src={ropeImg}
         alt="Rope"
-        className="block"
+        className="mt-[50px] block w-full"
       />
       <ServiceSection />
       <img 
         src={ropeImg}
         alt="Rope"
-        className="block"
+        className="mt-[-180px] block w-full"
       />
       <ContactSection />
     </div>

@@ -44,50 +44,52 @@ const JobSection = () => {
   ];
 
   return (
-    <div className="flex flex-col inset-0 h-[90vh] justify-around items-center">
-      {sectionsData.map((section, idx) => (
-        <div key={idx}>
-          <PhotoStack
-            pickImg={pickImg}
-            pickX={section.pickX}
-            pickY={section.pickY}
-            containerX={section.containerX}
-            containerY={section.containerY}
-            cards={section.cards}
-            title={section.title}
-            className={section.className}
+    <div className="h-screen">
+      <div className="flex flex-col inset-0 h-[90vh] justify-around items-center">
+        {sectionsData.map((section, idx) => (
+          <div key={idx}>
+            <PhotoStack
+              pickImg={pickImg}
+              pickX={section.pickX}
+              pickY={section.pickY}
+              containerX={section.containerX}
+              containerY={section.containerY}
+              cards={section.cards}
+              title={section.title}
+              className={section.className}
+            />
+          </div>
+        ))}
+        <div className="absolute">
+          <img
+            src={boardImg}
+            alt="Board"
+            width={570}
+            height={570}
+            className="translate-x-[-500px] translate-y-[190px]"
           />
+          <h1 className="absolute font-['Syne'] font-bold text-[96px] text-[#3C2F2F] translate-x-[-460px] translate-y-[-90px]">
+            {t('headline')}
+          </h1>
         </div>
-      ))}
-      <div className="absolute">
-        <img
-          src={boardImg}
-          alt="Board"
-          width={570}
-          height={570}
-          className="translate-x-[-500px] translate-y-[190px]"
+
+        <PolaroidCard
+          imageSrc={""}
+          imageAlt="Nội dung"
+          labelImgSrc={labelImg}
+          title={t('title4')}
+          className="translate-y-[15px]"
         />
-        <h1 className="absolute font-['Syne'] font-bold text-[96px] text-[#3C2F2F] translate-x-[-460px] translate-y-[-90px]">
-          {t('headline')}
-        </h1>
+
+        <PolaroidCard
+          imageSrc={""}
+          imageAlt="Nội dung"
+          labelImgSrc={labelImg}
+          title={t('title5')}
+          className="translate-x-[550px] translate-y-[15px]"
+          classNameTitle="ml-[-35px] min-w-[310px]"
+        />
       </div>
-
-      <PolaroidCard
-        imageSrc={""}
-        imageAlt="Nội dung"
-        labelImgSrc={labelImg}
-        title={t('title4')}
-        className="translate-y-[15px]"
-      />
-
-      <PolaroidCard
-        imageSrc={""}
-        imageAlt="Nội dung"
-        labelImgSrc={labelImg}
-        title={t('title5')}
-        className="translate-x-[550px] translate-y-[15px]"
-        classNameTitle="ml-[-35px] min-w-[310px]"
-      />
     </div>
   );
 };

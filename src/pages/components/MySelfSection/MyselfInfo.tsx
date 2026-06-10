@@ -67,10 +67,10 @@ const MyselfInfo = () => {
         <p className={classes.subTitle}>{t('subTitle')}</p>
       </div>
       <div className={classes.actions}>
-        <ButtonCustom className="bg-[#E9D4B9]" value={t('downloadCV')} />
+        <ButtonCustom className="bg-[#E9D4B9] transition-all duration-500 ease-out hover:scale-107 hover:text-black active:scale-95" value={t('downloadCV')} />
 
         <ButtonCustom
-          className="bg-[#E9D4B9]"
+          className="bg-[#E9D4B9] transition-all duration-500 ease-out hover:scale-107 hover:text-black active:scale-95"
           value={t('contact')}
           onClick={handleScrollToContact}
         />
