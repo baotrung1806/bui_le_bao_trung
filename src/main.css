@@ -87,3 +87,38 @@ body {
   animation: waveLoudspeaker 3s ease-in-out infinite;
   transition: transform 0.3s ease-out;
 }
+
+/* Định nghĩa chuyển động nhấp nhô mượt mà */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px); /* Di chuyển lên trên 12px */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Class áp dụng hiệu ứng */
+.animate-pen-float {
+  /* 4s: thời gian chạy hết 1 chu kỳ (càng cao thì chuyển động càng chậm/nhẹ nhàng)
+    ease-in-out: giúp gia tốc mượt ở hai đầu điểm dừng
+    infinite: lặp lại vô hạn
+  */
+  animation: floatAnimation 4s ease-in-out infinite;
+  
+  /* Đảm bảo trình duyệt tối ưu hóa phần cứng cho animation mượt hơn */
+  will-change: transform; 
+}
+
+/* 1. Hiệu ứng nhấp nhô nhẹ nhàng (Floating) */
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-pen-float {
+  animation: floatAnimation 4s ease-in-out infinite;
+}
