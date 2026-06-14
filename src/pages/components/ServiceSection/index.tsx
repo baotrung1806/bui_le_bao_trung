@@ -90,7 +90,7 @@ const ServiceSection = () => {
       subTitle_1: tItemsFirst("subTitle_1"),
       subTitle_2: tItemsFirst("subTitle_2"),
       hastag: tItemsFirst("hastag"),
-      className: "rotate-[-4.08deg]",
+      className: "rotate-[-4.08deg] hover:rotate-[5deg] transition-transform duration-500",
       classNameImg: "rotate-[4.08deg]"
     },
     {
@@ -99,7 +99,7 @@ const ServiceSection = () => {
       subTitle_1: tItemsSecond("subTitle_1"),
       subTitle_2: tItemsSecond("subTitle_2"),
       hastag: tItemsSecond("hastag"),
-      className: "translate-x-[50px] translate-y-[40px] rotate-[3deg]",
+      className: "translate-x-[50px] translate-y-[40px] rotate-[3deg] hover:rotate-[-5deg] transition-transform duration-500",
       classNameImg: "rotate-[2.55deg]"
     },
     {
@@ -108,7 +108,7 @@ const ServiceSection = () => {
       subTitle_1: tItemsThird("subTitle_1"),
       subTitle_2: tItemsThird("subTitle_2"),
       hastag: tItemsThird("hastag"),
-      className: "translate-x-[30px] translate-y-[-70px] rotate-[-3deg]",
+      className: "translate-x-[30px] translate-y-[-70px] rotate-[-3deg] hover:rotate-[5deg] transition-transform duration-500",
       classNameImg: "rotate-[-1.52deg]"
     },
   ];
@@ -158,7 +158,7 @@ const ServiceSection = () => {
                 className={`mt-[30px] ${item.classNameImg}`}
               />
               
-              <p className="font-['Caveat'] text-[#0057FF] text-[24px] translate-x-[40px] translate-y-[20px]">{item.hastag}</p>
+              <p className="font-['Caveat'] text-[#0057FF] text-[24px] translate-x-[30px] translate-y-[50px]">{item.hastag}</p>
             </div>
           ))}
         </div>

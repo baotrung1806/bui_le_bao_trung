@@ -7,6 +7,7 @@ interface CardConfig {
   bgClass?: string;
   hasImg: boolean;
   imgSrc?: string;
+  classNameImg?: string;
 }
 
 // Định nghĩa kiểu dữ liệu cho các Props của PhotoStack
@@ -61,7 +62,7 @@ const PhotoStack: React.FC<PhotoStackProps> = ({
           >
             <div className={`relative w-full h-75 aspect-square shadow-[inset_0_1px_5px_rgba(0,0,0,0.1)] overflow-hidden flex items-center justify-center group ${card.bgClass || 'bg-white'}`}>
               {card.hasImg && (
-                <img src={card.imgSrc || ""} alt="Nội dung" className="w-full h-full object-cover" />
+                <img src={card.imgSrc || ""} alt="Nội dung" className={`object-cover ${card.classNameImg || ''}`} />
               )}
             </div>
           </div>

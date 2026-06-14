@@ -18,7 +18,7 @@ export const BaoTrung = () => {
       <img 
         src={ropeImg}
         alt="Rope"
-        className="mt-[-150px] block w-full"
+        className="mt-[-100px] block w-full"
       />
       <ProjectSection />
       <img 
