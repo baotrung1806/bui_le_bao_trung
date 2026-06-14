@@ -23,7 +23,7 @@ const ZOOM_MAP: Record<string, string> = {
 
 const ProjectSection = () => {
   const t = useTranslation('main.project');
-  const [showOverlay, setShowOverlay] = useState<boolean>(false);
+  const [, setShowOverlay] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<'left' | 'right' | null>(null);
 
   return (
