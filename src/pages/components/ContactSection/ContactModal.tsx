@@ -23,8 +23,9 @@ const ContactModal: React.FC<ContactModalProps> = ({
       role="dialog"
       aria-modal="true"
     >
+      {/* 1. Đổi h-[90vh] thành h-[880px] để cố định khung form canvas */}
       <div
-        className="relative w-[700px] h-[90vh] rounded-[60px] bg-[#FBF9F4] p-6 text-center shadow-2xl transition-all"
+        className="relative w-[700px] h-[880px] rounded-[60px] bg-[#FBF9F4] p-6 text-center shadow-2xl transition-all"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -34,11 +35,12 @@ const ContactModal: React.FC<ContactModalProps> = ({
           ✕
         </button>
 
-        <h1 className="absolute w-100 font-['Syne'] font-bold text-[80px] text-[#3C2F2F] rotate-[-15deg] -translate-x-[30px] translate-y-[50px] leading-tight text-center">
+        {/* 2. Dùng top/left thay vì translate để cố định vị trí tuyệt đối */}
+        <h1 className="absolute top-[90px] left-[10px] w-[310px] font-['Syne'] font-bold text-[60px] text-[#3C2F2F] rotate-[-15deg] leading-tight text-center">
           {title}
         </h1>
 
-        <h1 className="absolute w-60 font-['Caveat'] font-bold text-[80px] text-[#0057FF] rotate-[13deg] translate-x-[400px] translate-y-[70px] leading-tight text-center">
+        <h1 className="absolute top-[70px] left-[400px] w-60 font-['Caveat'] font-bold text-[80px] text-[#0057FF] rotate-[13deg] leading-tight text-center">
           Scan Now
         </h1>
 
@@ -47,7 +49,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
           alt={`QR Code for ${title}`}
           width={300}
           height={300}
-          className="absolute translate-x-[190px] translate-y-[280px]"
+          className="absolute top-[280px] left-[190px]"
         />
 
         <img
@@ -55,15 +57,16 @@ const ContactModal: React.FC<ContactModalProps> = ({
           alt="Decorative Plane"
           width={360}
           height={360}
-          className="absolute translate-x-[300px] translate-y-[740px] rotate-[-15deg]"
+          className="absolute top-[700px] left-[300px] rotate-[-15deg]"
         />
 
+        {/* 3. Loại bỏ inset-0 và margin âm, đưa về top/left chuẩn xác */}
         <img
           src={portraitImg}
           alt="Bao Trung Portrait"
           width={460}
           height={460}
-          className="absolute inset-0 z-3 mt-[360px] -ml-[180px] object-cover"
+          className="absolute top-[360px] left-[-180px] z-3 object-cover"
         />
       </div>
     </div>
