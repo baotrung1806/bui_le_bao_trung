@@ -27,7 +27,7 @@ const ProjectSection = () => {
   const [activeSection, setActiveSection] = useState<'left' | 'right' | null>(null);
 
   return (
-    <div className="min-h-screen w-full flex justify-center items-center mt-0 pl-[40px] overflow-x-hidden">
+    <div className="min-h-screen w-full flex justify-center items-center mt-0 pl-[40px]">
       <div className="relative shrink-0" style={{ width: '1337px', height: '850px' }}>
         <img
           src={bookImg}

@@ -30,7 +30,7 @@ export const BaoTrung = () => {
       <img 
         src={ropeImg}
         alt="Rope"
-        className="mt-[-180px] block w-full"
+        className="mt-[-10px] block w-full"
       />
       <ContactSection />
     </div>
