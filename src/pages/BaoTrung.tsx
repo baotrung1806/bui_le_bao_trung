@@ -4,6 +4,7 @@ import ContactSection from "./components/ContactSection";
 import ServiceSection from "./components/ServiceSection";
 import JobSection from "./components/JobSection";
 import ProjectSection from "./components/ProjectSection";
+import Footer from "./components/Footer";
 
 export const BaoTrung = () => {
   return (
@@ -12,27 +13,28 @@ export const BaoTrung = () => {
       <img 
         src={ropeImg}
         alt="Rope"
-        className="mt-[60px] block"
+        className="block w-full"
       />
       <JobSection />
       <img 
         src={ropeImg}
         alt="Rope"
-        className="block"
+        className="mt-[-100px] block w-full"
       />
       <ProjectSection />
       <img 
         src={ropeImg}
         alt="Rope"
-        className="block"
+        className="mt-[50px] block w-full"
       />
       <ServiceSection />
       <img 
         src={ropeImg}
         alt="Rope"
-        className="block"
+        className="mt-[-10px] block w-full"
       />
       <ContactSection />
+      <Footer />
     </div>
   );
 };

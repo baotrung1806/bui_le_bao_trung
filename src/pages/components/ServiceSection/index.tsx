@@ -1,12 +1,15 @@
-import aiImg from "../../../assets/images/service/AI.webp";
 import editorImg from "../../../assets/images/service/Editor.webp";
 import ideaImg from "../../../assets/images/service/Idea.webp";
 import pinImg from "../../../assets/images/service/Pin.webp";
 import robotImg from "../../../assets/images/service/Robot.webp";
-import scriptsImg from "../../../assets/images/service/Scripts.webp";
 import staplesImg from "../../../assets/images/service/Staples.webp";
 import takephotoImg from "../../../assets/images/service/Takephoto.webp";
 import vectorImg from "../../../assets/images/service/Vector.webp";
+import pinBigImg from "../../../assets/images/service/Pin_big.webp";
+import logicImg from "../../../assets/images/service/Logic.webp";
+import boardAIImg from "../../../assets/images/service/Board_AI.webp";
+import boardEditorImg from "../../../assets/images/service/Board_VideoEditing.webp";
+import boardContentPlanningImg from "../../../assets/images/service/Board_ContentPlanning.webp";
 import { useTranslation } from "@/utils";
 
 const ServiceSection = () => {
@@ -20,122 +23,145 @@ const ServiceSection = () => {
       {
         src: editorImg,
         alt: "Editor Icon",
-        width: "95",
-        height: "95",
-        className: "absolute translate-y-[-5px] rotate-[-1.08deg]"
+        width: "85",
+        height: "85",
+        className: "absolute top-0 left-0 translate-x-[-30px] translate-y-[-30px] rotate-[-1.08deg]"
       },
       {
         src: pinImg,
         alt: "Pin Icon",
-        width: "40",
-        height: "40",
-        className: "absolute translate-x-[330px] translate-y-[-72px] rotate-[4deg]"
+        width: "30",
+        height: "30",
+        className: "absolute top-0 left-0 translate-x-[390px] translate-y-[-70px] rotate-[4deg]"
       },
       {
         src: takephotoImg,
         alt: "Takephoto Icon",
         width: "150",
         height: "150",
-        className: "absolute translate-x-[-125px] translate-y-[570px] rotate-[6deg]"
+        className: "absolute top-0 left-0 translate-x-[-125px] translate-y-[570px] rotate-[6deg]"
       },
     ],
     [
       {
-        src: aiImg,
-        alt: "AI Icon",
-        width: "100",
-        height: "100",
-        className: "absolute translate-x-[25px] translate-y-[-5px]"
+        src: pinBigImg,
+        alt: "Pin Big Icon",
+        width: "90",
+        height: "90",
+        className: "absolute top-0 left-0 translate-x-[-50px] translate-y-[-120px] rotate-[-25.91deg]"
       },
       {
-        src: staplesImg,
-        alt: "Staples Icon",
+        src: logicImg,
+        alt: "Logic Icon",
         width: "124",
         height: "124",
-        className: "absolute translate-x-[150px] translate-y-[-160px] rotate-[1.4deg]"
+        className: "absolute top-0 left-0 translate-x-[-90px] translate-y-[565px] rotate-[-3deg]"
       },
       {
         src: robotImg,
         alt: "Robot Icon",
         width: "130",
         height: "130",
-        className: "absolute translate-x-[280px] translate-y-[-10px] rotate-[1.65deg]"
+        className: "absolute top-0 left-0 translate-x-[350px] translate-y-[545px] rotate-[-3deg]"
       },
     ],
     [
       {
-        src: scriptsImg,
-        alt: "Scripts Icon",
-        width: "98",
-        height: "98",
-        className: "absolute"
+        src: staplesImg,
+        alt: "Staples Icon",
+        width: "70",
+        height: "70",
+        className: "absolute top-0 left-0 translate-x-[380px] translate-y-[-100px] rotate-[8deg]"
       },
       {
         src: ideaImg,
         alt: "Idea Icon",
-        width: "200",
-        height: "200",
-        className: "absolute translate-x-[280px] translate-y-[-130px]"
+        width: "170",
+        height: "170",
+        className: "absolute top-0 left-0 translate-x-[280px] translate-y-[590px]"
       },
     ],
   ];
 
   const serviceItem = [
     {
-      title: tItemsFirst("title"),
+      titleImg: boardEditorImg,
+      titleImgClass: "absolute top-0 left-0 mt-[-220px] ml-[50px] w-[300px] object-contain",
       subTitle_1: tItemsFirst("subTitle_1"),
       subTitle_2: tItemsFirst("subTitle_2"),
       hastag: tItemsFirst("hastag"),
-      className: "rotate-[-4.08deg]",
+      className: "rotate-[-4.08deg] hover:rotate-[5deg] transition-transform duration-500",
       classNameImg: "rotate-[4.08deg]"
     },
     {
-      title: tItemsSecond("title"),
+      titleImg: boardAIImg,
+      titleImgClass: "absolute top-0 left-0 mt-[-230px] ml-[120px] w-[180px] object-contain rotate-[2deg]",
       subTitle_1: tItemsSecond("subTitle_1"),
       subTitle_2: tItemsSecond("subTitle_2"),
       hastag: tItemsSecond("hastag"),
-      className: "translate-y-[40px] rotate-[3deg]",
+      className: "translate-x-[50px] translate-y-[40px] rotate-[3deg] hover:rotate-[-5deg] transition-transform duration-500",
       classNameImg: "rotate-[2.55deg]"
     },
     {
-      title: tItemsThird("title"),
+      titleImg: boardContentPlanningImg,
+      titleImgClass: "absolute top-0 left-0 mt-[-235px] ml-[85px] w-[220px] object-contain rotate-[-2deg]",
       subTitle_1: tItemsThird("subTitle_1"),
       subTitle_2: tItemsThird("subTitle_2"),
       hastag: tItemsThird("hastag"),
-      className: "translate-y-[-70px] rotate-[-3deg]",
+      className: "translate-x-[30px] translate-y-[-70px] rotate-[-3deg] hover:rotate-[5deg] transition-transform duration-500",
       classNameImg: "rotate-[-1.52deg]"
     },
-  ]
+  ];
 
   return (
-    <div className="flex flex-col inset-0 h-screen text-[#3C2F2F] translate-x-[90px] translate-y-[90px]">
-      <h1 className="font-['Syne'] font-bold text-[96px] translate-x-[-20px] translate-y-[-90px]">{t("headline")}</h1>
-      <div className="flex flex-row gap-20">
-        {serviceItem.map((item, index) => (
-          <div className={`p-10 w-[480px] h-[699px] bg-[#E9D4B9] rounded-[20px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ${item.className}`}>
-            <div className="relative">
-              {imgItem[index]?.map((img) => (
+    <div id="service" className="h-screen">
+      <div className="flex flex-col inset-0 h-[95vh] text-[#3C2F2F] translate-x-[90px] translate-y-[20px]">
+        <h1 className="font-['Syne'] font-bold text-[96px] translate-x-[-20px] translate-y-[-90px]">{t("headline")}</h1>
+        
+        <div className="flex flex-row gap-20 flex-nowrap w-max">
+          {serviceItem.map((item, index) => (
+            <div key={index} className={`relative flex-shrink-0 p-10 w-[480px] h-[699px] bg-[#E9D4B9] rounded-[20px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ${item.className}`}>
+              
+              <div className="relative w-full h-0 z-10">
+                {imgItem[index]?.map((img) => (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    width={img.width}
+                    height={img.height}
+                    className={img.className}
+                  />
+                ))}
+              </div>
+
+              <img
+                src={vectorImg}
+                alt="Vector"
+                className={`mt-[80px] ${item.classNameImg}`}
+              />
+              
+              <div className="relative w-full h-0 z-10">
                 <img
-                  key={img.src}
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  className={img.className}
+                  src={item.titleImg}
+                  alt="Service Board"
+                  className={item.titleImgClass}
                 />
-              ))}
+              </div>
+              
+              <p className="w-104 font-plus text-[21px] mt-[40px]">{item.subTitle_1}</p>
+              <p className="font-plus text-[21px] mt-[40px]" dangerouslySetInnerHTML={{ __html: item.subTitle_2 }} />
+              
+              <img
+                src={vectorImg}
+                alt="Vector"
+                className={`mt-[30px] ${item.classNameImg}`}
+              />
+              
+              <p className="font-['Caveat'] text-[#0057FF] text-[24px] translate-x-[30px] translate-y-[50px]">{item.hastag}</p>
             </div>
-            <img
-              src={vectorImg}
-              alt="Vector"
-              className={`mt-[120px] ${item.classNameImg}`}
-            />
-            <h1 className="font-plus font-bold text-[31px] mt-[20px]">{item.title}</h1>
-            <p className="font-plus text-[21px] mt-[40px]">{item.subTitle_1}</p>
-            <p className="font-plus text-[21px] mt-[40px]">{item.subTitle_2}</p>
-            <p className="font-['Caveat'] text-[#0057FF] text-[24px] translate-x-[40px] translate-y-[90px]">{item.hastag}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

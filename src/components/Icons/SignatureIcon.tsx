@@ -113,11 +113,11 @@ type SignatureIconProps = Omit<SVGProps<SVGSVGElement>, 'color'> & {
 export default function SignatureIcon({
   width = 553,
   height = 119,
-  color = "#3c2f2f",
+  color = '#3c2f2f',
   parts = DEFAULT_PARTS,
   partColors,
   partOpacities,
-  className
+  className,
 }: SignatureIconProps) {
   return (
     <svg
@@ -127,22 +127,65 @@ export default function SignatureIcon({
       height={height}
       className={className}
     >
-      <g transform="translate(0 476) scale(0.1 -0.1)">
-        {parts.map((part) => {
-          const fill = partColors?.[part.id] ?? part.fill ?? color;
-          const opacity = partOpacities?.[part.id] ?? part.opacity;
-          return (
-            <path
-              key={part.id}
-              d={part.d}
-              fill={fill}
-              opacity={opacity}
-              stroke={part.stroke}
-              strokeWidth={part.strokeWidth}
-              className={part.className}
-            />
-          );
-        })}
+      <defs>
+        <mask id="signature-mask">
+          {/* Nét 1: Kéo từ phía trên trái sang phải */}
+          <path
+            id="sig-stroke-1"
+            d="M 30 140 C 600 90, 1500 80, 2180 85"
+            fill="none"
+            stroke="white"
+            strokeWidth="240"
+            strokeLinecap="round"
+          />
+          {/* Nét 2: Xoẹt từ dưới trái sang phải */}
+          <path
+            id="sig-stroke-2"
+            d="M 50 330 C 600 310, 1400 290, 2050 290"
+            fill="none"
+            stroke="white"
+            strokeWidth="200"
+            strokeLinecap="round"
+          />
+        </mask>
+
+        <style>{`
+          #sig-stroke-1 {
+            stroke-dasharray: 2200;
+            stroke-dashoffset: 2200;
+            animation-delay: 0.4s; /* Chờ chữ cái gõ xong */
+          }
+          #sig-stroke-2 {
+            stroke-dasharray: 2010;
+            stroke-dashoffset: 2000;
+            animation: drawStroke2 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 1.5s; /* Chờ nét 1 chạy xong mới kích hoạt */
+          }
+
+          @keyframes drawStroke1 { to { stroke-dashoffset: 0; } }
+          @keyframes drawStroke2 { to { stroke-dashoffset: 0; } }
+        `}</style>
+      </defs>
+
+      {/* GIẢI PHÁP: Bọc bằng cụm <g> không biến đổi tỉ lệ để nhận mask chuẩn xác */}
+      <g mask="url(#signature-mask)">
+        <g transform="translate(0 476) scale(0.1 -0.1)">
+          {parts.map((part) => {
+            const fill = partColors?.[part.id] ?? part.fill ?? color;
+            const opacity = partOpacities?.[part.id] ?? part.opacity;
+            return (
+              <path
+                key={part.id}
+                d={part.d}
+                fill={fill}
+                opacity={opacity}
+                stroke={part.stroke}
+                strokeWidth={part.strokeWidth}
+                className={part.className}
+              />
+            );
+          })}
+        </g>
       </g>
     </svg>
   );
