@@ -109,7 +109,7 @@ const JobSection = () => {
   ];
 
   return (
-    <div className="h-screen w-full relative">
+    <div id="job" className="h-screen w-full relative">
       
       {/* MODAL */}
       {selectedSection && (
@@ -118,7 +118,7 @@ const JobSection = () => {
           onClick={() => setSelectedSection(null)} 
         >
           <div 
-            className="relative w-3/5 min-h-3/4 bg-[#E9D4B9] rounded-[20px] p-10 shadow-2xl flex flex-col"
+            className="relative w-3/5 min-h-9/10 bg-[#FBF9F4] rounded-[20px] p-10 shadow-2xl flex flex-col"
             onClick={(e) => e.stopPropagation()} 
           >
             <button 
@@ -128,7 +128,7 @@ const JobSection = () => {
               &times;
             </button>
 
-            <div className="mt-8 flex flex-col items-center">
+            <div className="-mt-5 flex flex-col items-center">
               <h2 className="font-['Syne'] font-bold text-[48px] text-[#3C2F2F] mb-6">
                 {selectedSection.title}
               </h2>

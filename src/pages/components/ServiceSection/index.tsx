@@ -114,7 +114,7 @@ const ServiceSection = () => {
   ];
 
   return (
-    <div className="h-screen">
+    <div id="service" className="h-screen">
       <div className="flex flex-col inset-0 h-[95vh] text-[#3C2F2F] translate-x-[90px] translate-y-[20px]">
         <h1 className="font-['Syne'] font-bold text-[96px] translate-x-[-20px] translate-y-[-90px]">{t("headline")}</h1>
         

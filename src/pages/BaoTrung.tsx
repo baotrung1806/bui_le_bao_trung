@@ -4,6 +4,7 @@ import ContactSection from "./components/ContactSection";
 import ServiceSection from "./components/ServiceSection";
 import JobSection from "./components/JobSection";
 import ProjectSection from "./components/ProjectSection";
+import Footer from "./components/Footer";
 
 export const BaoTrung = () => {
   return (
@@ -33,6 +34,7 @@ export const BaoTrung = () => {
         className="mt-[-10px] block w-full"
       />
       <ContactSection />
+      <Footer />
     </div>
   );
 };
