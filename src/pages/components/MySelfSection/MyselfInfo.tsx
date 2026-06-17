@@ -4,6 +4,7 @@ import SignatureIcon from '@/components/Icons/SignatureIcon';
 import { useTranslation } from '@/utils';
 import { useLenis } from 'lenis/react';
 import penImg from '../../../assets/images/myself/Pen.webp';
+import myCV from '../../../assets/CV - BUI LE BAO TRUNG.pdf';
 
 const SCROLL_CONFIG = {
   target: '#contact',
@@ -34,7 +35,8 @@ const MyselfInfo = () => {
 
   // ─── STYLES DEFINITION ───────────────────────────────────────────────────
   const classes = {
-    container: 'flex flex-col w-full md:w-2/5 items-center mt-[-75px] text-[#3C2F2F] translate-x-[60px]',
+    container:
+      'flex flex-col w-full md:w-2/5 items-center mt-[-75px] text-[#3C2F2F] translate-x-[60px]',
     content: 'mr-[180px] block',
     headline: 'text-[48px] font-plus',
     pen: 'absolute w-[80px] mt-[-10px] ml-[-30px]',
@@ -88,7 +90,7 @@ const MyselfInfo = () => {
       <div className={`${classes.content}`}>
         <p className={classes.headline}>{t('headline')}</p>
         <img src={penImg} alt="Pen" className={classes.pen} />
-        
+
         <div key={loopKey} className={classes.nameWrap} loop-wrapper>
           <h1 className={classes.name}>
             {/* Đã bổ sung kiểu dữ liệu rõ ràng để fix lỗi ts(7006) */}
@@ -105,7 +107,7 @@ const MyselfInfo = () => {
               </span>
             ))}
           </h1>
-          
+
           <SignatureIcon className={classes.signature} />
         </div>
 
@@ -114,10 +116,12 @@ const MyselfInfo = () => {
       </div>
 
       <div className={classes.actions}>
-        <ButtonCustom
-          className="bg-[#E9D4B9] transition-all duration-500 ease-out hover:scale-107 hover:text-black active:scale-95"
-          value={t('downloadCV')}
-        />
+        <a href={myCV} download="CV_BuiLeBaoTrung.pdf">
+          <ButtonCustom
+            className="bg-[#E9D4B9] transition-all duration-500 ease-out hover:scale-107 hover:text-black active:scale-95"
+            value={t('downloadCV')}
+          />
+        </a>
         <ButtonCustom
           className="bg-[#E9D4B9] transition-all duration-500 ease-out hover:scale-107 hover:text-black active:scale-95"
           value={t('contact')}
