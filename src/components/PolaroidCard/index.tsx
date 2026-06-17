@@ -1,3 +1,4 @@
+import { useTranslation } from '@/utils';
 import React from 'react';
 
 interface PolaroidCardProps {
@@ -17,6 +18,11 @@ const PolaroidCard: React.FC<PolaroidCardProps> = ({
   className = "",
   classNameTitle = ""
 }) => {
+  // Biến kiểm tra xem title có phải là 'title2' hay không
+  const t = useTranslation('main.job');
+  
+  const isTitle2 = title === t('title2');
+
   return (
     <div className={`absolute ${className}`}>
       {/* Lớp Shadow phía dưới */}
@@ -40,7 +46,11 @@ const PolaroidCard: React.FC<PolaroidCardProps> = ({
           alt="Label Left"
           width={80}
           height={80}
-          className="translate-x-[-66px] translate-y-[91px]"
+          className={
+            isTitle2
+              ? "translate-x-[-90px] translate-y-[330px] rotate-[260deg]" // <-- Thay đổi tọa độ mới cho title2 tại đây
+              : "translate-x-[-66px] translate-y-[91px]"   // Tọa độ mặc định
+          }
         />
       )}
 
@@ -51,7 +61,11 @@ const PolaroidCard: React.FC<PolaroidCardProps> = ({
           alt="Label Right"
           width={110}
           height={110}
-          className="translate-x-[245px] translate-y-[260px] rotate-[-5deg]"
+          className={
+            isTitle2
+              ? "translate-x-[260px] rotate-[260deg]" // <-- Thay đổi tọa độ/độ xoay mới cho title2 tại đây
+              : "translate-x-[245px] translate-y-[260px] rotate-[-5deg]"   // Tọa độ mặc định
+          }
         />
       )}
 

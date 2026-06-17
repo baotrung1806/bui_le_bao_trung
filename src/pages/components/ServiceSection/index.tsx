@@ -1,15 +1,15 @@
-import editorImg from "../../../assets/images/service/Editor.webp";
-import ideaImg from "../../../assets/images/service/Idea.webp";
-import pinImg from "../../../assets/images/service/Pin.webp";
-import robotImg from "../../../assets/images/service/Robot.webp";
-import staplesImg from "../../../assets/images/service/Staples.webp";
-import takephotoImg from "../../../assets/images/service/Takephoto.webp";
-import vectorImg from "../../../assets/images/service/Vector.webp";
-import pinBigImg from "../../../assets/images/service/Pin_big.webp";
-import logicImg from "../../../assets/images/service/Logic.webp";
-import boardAIImg from "../../../assets/images/service/Board_AI.webp";
-import boardEditorImg from "../../../assets/images/service/Board_VideoEditing.webp";
-import boardContentPlanningImg from "../../../assets/images/service/Board_ContentPlanning.webp";
+import editorImg from "@/assets/images/service/Editor.webp";
+import ideaImg from "@/assets/images/service/Idea.webp";
+import pinImg from "@/assets/images/service/Pin.webp";
+import robotImg from "@/assets/images/service/Robot.webp";
+import staplesImg from "@/assets/images/service/Staples.webp";
+import takephotoImg from "@/assets/images/service/Takephoto.webp";
+import vectorImg from "@/assets/images/service/Vector.webp";
+import pinBigImg from "@/assets/images/service/Pin_big.webp";
+import logicImg from "@/assets/images/service/Logic.webp";
+import boardAIImg from "@/assets/images/service/Board_AI.webp";
+import boardEditorImg from "@/assets/images/service/Board_VideoEditing.webp";
+import boardContentPlanningImg from "@/assets/images/service/Board_ContentPlanning.webp";
 import { useTranslation } from "@/utils";
 
 const ServiceSection = () => {

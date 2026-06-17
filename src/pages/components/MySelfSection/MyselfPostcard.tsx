@@ -1,19 +1,19 @@
-import cardBg from '../../../assets/images/myself/Postcard.webp';
-import tapeImg1 from '../../../assets/images/myself/Label1.webp';
-import tapeImg2 from '../../../assets/images/myself/Label2.webp';
-import cameraIcon from '../../../assets/images/myself/Camera.webp';
-import postmarkIcon from '../../../assets/images/myself/Stamp.webp';
-import vnMapImg from '../../../assets/images/myself/MapVN.webp';
-import vnFlagStampImg from '../../../assets/images/myself/Flag.webp';
-import portraitImg from '../../../assets/images/myself/BaoTrung.webp';
-import cricleNicknameImg from '../../../assets/images/myself/CricleNickname.webp';
+import cardBg from '@/assets/images/myself/Postcard.webp';
+import tapeImg1 from '@/assets/images/myself/Label1.webp';
+import tapeImg2 from '@/assets/images/myself/Label2.webp';
+import cameraIcon from '@/assets/images/myself/Camera.webp';
+import postmarkIcon from '@/assets/images/myself/Stamp.webp';
+import vnMapImg from '@/assets/images/myself/MapVN.webp';
+import vnFlagStampImg from '@/assets/images/myself/Flag.webp';
+import portraitImg from '@/assets/images/myself/BaoTrung.webp';
+import cricleNicknameImg from '@/assets/images/myself/CricleNickname.webp';
 import { useTranslation } from '@/utils';
 
 const EDUCATION_KEYS = [
   { key: 'first', className: '' },
   { key: 'second', className: 'mr-[15px]' },
   { key: 'third', className: 'mr-[180px]' },
-];
+] as const;
 
 const DECORATIVE_IMAGES = [
   {
@@ -36,7 +36,7 @@ const DECORATIVE_IMAGES = [
     alt: 'Postmark',
     className: 'absolute right-6 z-10 w-[250px] mr-[60px] mt-[20px]',
   },
-];
+] as const;
 
 const CONTENT_IMAGES = [
   {
@@ -49,32 +49,34 @@ const CONTENT_IMAGES = [
     alt: 'Portrait',
     className: 'absolute inset-0 z-3 w-[400px] h-[720px] mt-[190px] ml-[-55px] object-cover',
   },
-];
+] as const;
+
+/** Styles tập trung */
+const classes = {
+  root: 'relative text-[#3C2F2F]',
+  card: 'w-full h-[720px] object-cover rotate-[-3deg]',
+  textArea: 'absolute inset-0 z-20 mt-[145px] ml-[465px] p-10',
+  infoBlock: 'w-[420px] rotate-[-3deg]',
+  infoRow: 'flex gap-2 text-[23px]',
+  infoLabel: "font-semibold font-['Syne']",
+  infoValue: 'font-plus mt-[4px] ml-auto text-right',
+  divider: 'h-1 w-full rounded-full bg-[#3C2E2E] opacity-60 mt-1',
+  nicknameRow: 'flex items-center gap-4 ml-[7px] relative',
+  nicknameLabel: 'font-plus rotate-[-3deg] text-[19px]',
+  nicknameValue:
+    "absolute text-[48px] font-['Caveat'] font-bold rotate-[-7.4deg] ml-[290px] mt-[-32px]",
+  nicknameCricle: 'absolute ml-[134px] mt-[-3px]',
+  addressBlock: 'w-[420px] rotate-[-3deg] mt-4 ml-[10px]',
+  educationWrap: 'flex flex-col gap-4',
+  educationTitle: "font-semibold font-['Syne'] text-[23px] rotate-[-3deg] mb-2 ml-[10px]",
+  educationList: 'flex flex-col gap-6 text-[19px] mr-[7px]',
+  educationItem: 'flex flex-col items-end tracking-wide font-plus rotate-[-3deg]',
+  educationText: "before:content-['•'] before:mr-1 before:opacity-60 text-right leading-tight",
+  stamp: 'absolute right-0 z-50 w-[300px] mt-[-180px] mr-[-60px] ml-[300px]',
+} as const;
 
 const MyselfPostcard = () => {
   const t = useTranslation('main.myself');
-  const classes = {
-    root: 'relative text-[#3C2F2F]',
-    card: 'w-full h-[720px] object-cover rotate-[-3deg]',
-    textArea: 'absolute inset-0 z-20 mt-[145px] ml-[465px] p-10',
-    infoBlock: 'w-[420px] rotate-[-3deg]',
-    infoRow: 'flex gap-2 text-[23px]',
-    infoLabel: "font-semibold font-['Syne']",
-    infoValue: 'font-plus mt-[4px] ml-auto text-right',
-    divider: 'h-1 w-full rounded-full bg-[#3C2E2E] opacity-60 mt-1',
-    nicknameRow: 'flex items-center gap-4 ml-[7px] relative',
-    nicknameLabel: 'font-plus rotate-[-3deg] text-[19px]',
-    nicknameValue:
-      "absolute text-[48px] font-['Caveat'] font-bold rotate-[-7.4deg] ml-[290px] mt-[-32px]",
-    nicknameCricle: 'absolute ml-[134px] mt-[-3px]',
-    addressBlock: 'w-[420px] rotate-[-3deg] mt-4 ml-[10px]',
-    educationWrap: 'flex flex-col gap-4',
-    educationTitle: "font-semibold font-['Syne'] text-[23px] rotate-[-3deg] mb-2 ml-[10px]",
-    educationList: 'flex flex-col gap-6 text-[19px] mr-[7px]',
-    educationItem: 'flex flex-col items-end tracking-wide font-plus rotate-[-3deg]',
-    educationText: "before:content-['•'] before:mr-1 before:opacity-60 text-right leading-tight",
-    stamp: 'absolute right-0 z-50 w-[300px] mt-[-180px] mr-[-60px] ml-[300px]',
-  };
 
   return (
     <div className={`hover:rotate-[3deg] duration-500 transform transition-transform ${classes.root}`}>

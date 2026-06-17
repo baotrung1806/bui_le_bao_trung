@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import pinNewImg from '../../../assets/images/project/Pen_new.webp';
-import vectorImg from '../../../assets/images/project/Vector.webp';
-import labelImg from '../../../assets/images/common/Label.webp';
-import label3Img from '../../../assets/images/project/Label3.webp';
-import title2Img from '../../../assets/images/project/title2.webp';
-import title4Img from '../../../assets/images/project/title4.webp';
+import pinNewImg from '@/assets/images/project/Pen_new.webp';
+import vectorImg from '@/assets/images/project/Vector.webp';
+import labelImg from '@/assets/images/common/Label.webp';
+import label3Img from '@/assets/images/project/Label3.webp';
+import title2Img from '@/assets/images/project/title2.webp';
+import title4Img from '@/assets/images/project/title4.webp';
 import { useTranslation } from '@/utils';
+import { parsePosition } from '@/utils/parsePosition';
 
 interface RightSectionProps {
-  setShowOverlay: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveSection: React.Dispatch<React.SetStateAction<'left' | 'right' | null>>;
   zoomMap: Record<string, string>;
 }
@@ -38,11 +38,11 @@ const RIGHT_BLOCKS = [
     zoomImageKey: 'zoom4',
     rotateClass: '',
   },
-];
+] as const;
 
 const BASE_TEXT_COLOR = 'text-[#3C2F2F]';
 
-const RightSection = ({ setShowOverlay, setActiveSection, zoomMap }: RightSectionProps) => {
+const RightSection = ({ setActiveSection, zoomMap }: RightSectionProps) => {
   const t = useTranslation('main.project');
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
@@ -93,7 +93,7 @@ const RightSection = ({ setShowOverlay, setActiveSection, zoomMap }: RightSectio
               </p>
             </div>
 
-            {/* 1. KHỐI ẢNH NHỎ GỐC */}
+            {/* Ảnh gốc */}
             <div
               className={`absolute z-10 ${block.rotateClass}`}
               style={{ ...parsePosition(block.imgPos), width: `${block.imgWidth}px` }}
@@ -105,12 +105,10 @@ const RightSection = ({ setShowOverlay, setActiveSection, zoomMap }: RightSectio
                 loading="lazy"
                 onMouseEnter={() => {
                   setHoveredId(block.id);
-                  setShowOverlay(true);
                   setActiveSection('right');
                 }}
                 onMouseLeave={() => {
                   setHoveredId(null);
-                  setShowOverlay(false);
                   setActiveSection(null);
                 }}
               />
@@ -126,7 +124,7 @@ const RightSection = ({ setShowOverlay, setActiveSection, zoomMap }: RightSectio
               )}
             </div>
 
-            {/* 2. KHỐI ẢNH PHÓNG TO ĐỘC LẬP */}
+            {/* Ảnh phóng to */}
             <div
               className={`absolute transition-all duration-500 transform pointer-events-none ${block.rotateClass} ${
                 isHovered ? 'opacity-100 scale-110 z-50' : 'opacity-0 scale-50 z-0'
@@ -158,15 +156,6 @@ const RightSection = ({ setShowOverlay, setActiveSection, zoomMap }: RightSectio
       </span>
     </>
   );
-};
-
-const parsePosition = (posClass: string) => {
-  const styles: React.CSSProperties = {};
-  if (posClass.includes('top-')) styles.top = posClass.match(/top-\[?(-?\d+px)\]?/)?.[1];
-  if (posClass.includes('bottom-')) styles.bottom = posClass.match(/bottom-\[?(-?\d+px)\]?/)?.[1];
-  if (posClass.includes('left-')) styles.left = posClass.match(/left-\[?(-?\d+px)\]?/)?.[1];
-  if (posClass.includes('right-')) styles.right = posClass.match(/right-\[?(-?\d+px)\]?/)?.[1];
-  return styles;
 };
 
 export default RightSection;

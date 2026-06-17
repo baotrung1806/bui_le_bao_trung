@@ -1,10 +1,10 @@
-import ropeImg from "../assets/images/common/Rope.webp";
-import MySelfSection from "./components/MySelfSection";
-import ContactSection from "./components/ContactSection";
-import ServiceSection from "./components/ServiceSection";
-import JobSection from "./components/JobSection";
-import ProjectSection from "./components/ProjectSection";
-import Footer from "./components/Footer";
+import ropeImg from '@/assets/images/common/Rope.webp';
+import MySelfSection from './components/MySelfSection';
+import ContactSection from './components/ContactSection';
+import ServiceSection from './components/ServiceSection';
+import JobSection from './components/JobSection';
+import ProjectSection from './components/ProjectSection';
+import Footer from './components/Footer';
 
 export const BaoTrung = () => {
   return (

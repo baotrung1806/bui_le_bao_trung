@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import bookImg from '../../../assets/images/project/Book.webp';
-import pageImg from '../../../assets/images/project/Page.webp';
-import penOldImg from '../../../assets/images/project/Pen_old.webp';
-
-import zoom1Img from '../../../assets/images/project/zoom1.webp';
-import zoom2Img from '../../../assets/images/project/zoom2.webp';
-import zoom3Img from '../../../assets/images/project/zoom3.webp';
-import zoom4Img from '../../../assets/images/project/zoom4.webp';
-import zoom5Img from '../../../assets/images/project/zoom5.webp';
-
+import bookImg from '@/assets/images/project/Book.webp';
+import pageImg from '@/assets/images/project/Page.webp';
+import penOldImg from '@/assets/images/project/Pen_old.webp';
+import zoom1Img from '@/assets/images/project/zoom1.webp';
+import zoom2Img from '@/assets/images/project/zoom2.webp';
+import zoom3Img from '@/assets/images/project/zoom3.webp';
+import zoom4Img from '@/assets/images/project/zoom4.webp';
+import zoom5Img from '@/assets/images/project/zoom5.webp';
 import { useTranslation } from '@/utils';
 import LeftSection from './LeftSection';
 import RightSection from './RightSection';
@@ -23,7 +21,6 @@ const ZOOM_MAP: Record<string, string> = {
 
 const ProjectSection = () => {
   const t = useTranslation('main.project');
-  const [, setShowOverlay] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<'left' | 'right' | null>(null);
 
   return (
@@ -58,7 +55,6 @@ const ProjectSection = () => {
           className={`absolute top-0 left-0 h-full w-[688px] ${activeSection === 'left' ? 'z-40' : 'z-10'}`}
         >
           <LeftSection
-            setShowOverlay={setShowOverlay}
             setActiveSection={setActiveSection}
             zoomMap={ZOOM_MAP}
           />
@@ -68,7 +64,6 @@ const ProjectSection = () => {
           className={`absolute top-0 left-[688px] h-full w-[688px] ${activeSection === 'right' ? 'z-40' : 'z-10'}`}
         >
           <RightSection
-            setShowOverlay={setShowOverlay}
             setActiveSection={setActiveSection}
             zoomMap={ZOOM_MAP}
           />
@@ -80,7 +75,7 @@ const ProjectSection = () => {
           alt="Pen Old"
           width={135}
           height={135}
-          className={`absolute right-[-125px] top-[-50px] z-20 animate-pen-float`}
+          className="absolute right-[-125px] top-[-50px] z-20 animate-pen-float"
           loading="lazy"
         />
         <h1 className="absolute right-[-215px] top-[-10px] w-[200px] text-center font-['Caveat'] font-bold text-[40px] text-[#3C2F2F] z-20 animate-pen-float">

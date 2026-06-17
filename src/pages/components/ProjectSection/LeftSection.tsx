@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import magnifyingGlassImg from '../../../assets/images/project/Magnifying_glass.webp';
-import vectorImg from '../../../assets/images/project/Vector.webp';
-import title1Img from '../../../assets/images/project/title1.webp';
-import title3Img from '../../../assets/images/project/title3.webp';
-import title5Img from '../../../assets/images/project/title5.webp';
+import magnifyingGlassImg from '@/assets/images/project/Magnifying_glass.webp';
+import vectorImg from '@/assets/images/project/Vector.webp';
+import title1Img from '@/assets/images/project/title1.webp';
+import title3Img from '@/assets/images/project/title3.webp';
+import title5Img from '@/assets/images/project/title5.webp';
 import { useTranslation } from '@/utils';
+import { parsePosition } from '@/utils/parsePosition';
 
 interface LeftSectionProps {
-  setShowOverlay: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveSection: React.Dispatch<React.SetStateAction<'left' | 'right' | null>>;
   zoomMap: Record<string, string>;
 }
@@ -46,9 +46,9 @@ const LEFT_BLOCKS = [
     imgWidth: 450,
     zoomImageKey: 'zoom5',
   },
-];
+] as const;
 
-const LeftSection = ({ setShowOverlay, setActiveSection, zoomMap }: LeftSectionProps) => {
+const LeftSection = ({ setActiveSection, zoomMap }: LeftSectionProps) => {
   const t = useTranslation('main.project');
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
@@ -85,7 +85,7 @@ const LeftSection = ({ setShowOverlay, setActiveSection, zoomMap }: LeftSectionP
               </p>
             </div>
 
-            {/* 1. KHỐI ẢNH NHỎ GỐC */}
+            {/* Ảnh gốc */}
             <div
               className="absolute z-10"
               style={{ ...parsePosition(block.imgPos), width: `${block.imgWidth}px` }}
@@ -97,18 +97,16 @@ const LeftSection = ({ setShowOverlay, setActiveSection, zoomMap }: LeftSectionP
                 loading="lazy"
                 onMouseEnter={() => {
                   setHoveredId(block.id);
-                  setShowOverlay(true);
-                  setActiveSection('left'); // Báo hiệu trang trái được chọn
+                  setActiveSection('left');
                 }}
                 onMouseLeave={() => {
                   setHoveredId(null);
-                  setShowOverlay(false);
                   setActiveSection(null);
                 }}
               />
             </div>
 
-            {/* 2. KHỐI ẢNH PHÓNG TO ĐỘC LẬP - đặt z-50 cao nhất */}
+            {/* Ảnh phóng to */}
             <div
               className={`absolute transition-all duration-600 transform pointer-events-none ${
                 isHovered ? 'opacity-100 scale-110 z-50' : 'opacity-0 scale-50 z-0'
@@ -128,15 +126,6 @@ const LeftSection = ({ setShowOverlay, setActiveSection, zoomMap }: LeftSectionP
       })}
     </>
   );
-};
-
-const parsePosition = (posClass: string) => {
-  const styles: React.CSSProperties = {};
-  if (posClass.includes('top-')) styles.top = posClass.match(/top-\[?(-?\d+px)\]?/)?.[1];
-  if (posClass.includes('bottom-')) styles.bottom = posClass.match(/bottom-\[?(-?\d+px)\]?/)?.[1];
-  if (posClass.includes('left-')) styles.left = posClass.match(/left-\[?(-?\d+px)\]?/)?.[1];
-  if (posClass.includes('right-')) styles.right = posClass.match(/right-\[?(-?\d+px)\]?/)?.[1];
-  return styles;
 };
 
 export default LeftSection;
