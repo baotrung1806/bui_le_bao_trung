@@ -71,7 +71,9 @@ const PolaroidCard: React.FC<PolaroidCardProps> = ({
 
       {/* Đoạn text tiêu đề */}
       <p className={`absolute w-[200px] font-plus text-[36px] text-[#3C2F2F] z-1 translate-x-[20px] translate-y-[250px] ${classNameTitle}`}>
-        {title}
+        <span className="inline-block title-scale">
+          {title}
+        </span>
       </p>
     </div>
   );

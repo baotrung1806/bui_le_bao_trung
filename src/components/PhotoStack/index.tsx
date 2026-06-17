@@ -33,7 +33,7 @@ const PhotoStack: React.FC<PhotoStackProps> = ({
   className
 }) => {
   return (
-    <div>
+    <div className="group">
       {/* Ghim ảnh (pickImg) */}
       <img
         src={pickImg}
@@ -60,7 +60,7 @@ const PhotoStack: React.FC<PhotoStackProps> = ({
               shadow-[2px_4px_16px_rgba(0,0,0,0.12),-1px_2px_4px_rgba(0,0,0,0.05)] 
               border border-stone-300/40 select-none ${card.rotateClass} ${card.translateClass || ''}`}
           >
-            <div className={`relative w-full h-75 aspect-square shadow-[inset_0_1px_5px_rgba(0,0,0,0.1)] overflow-hidden flex items-center justify-center group ${card.bgClass || 'bg-white'}`}>
+            <div className={`relative w-full h-75 aspect-square shadow-[inset_0_1px_5px_rgba(0,0,0,0.1)] overflow-hidden flex items-center justify-center ${card.bgClass || 'bg-white'}`}>
               {card.hasImg && (
                 <img src={card.imgSrc || ""} alt="Nội dung" className={`object-cover ${card.classNameImg || ''}`} />
               )}
@@ -69,8 +69,12 @@ const PhotoStack: React.FC<PhotoStackProps> = ({
         ))}
       </div>
 
+      {/* Title */}
       <p className={`absolute font-plus text-[36px] text-[#3C2F2F] z-1 ${className}`}>
-        {title}
+        {/* CHỈNH SỬA: Giữ nguyên title-shake-x, kết hợp với CSS bên dưới để chạy hiệu ứng */}
+        <span className="inline-block title-shake-x transition-transform duration-300">
+          {title}
+        </span>
       </p>
     </div>
   );

@@ -64,7 +64,6 @@ const JobSection = () => {
     setTimeout(() => setSelectedSection(null), MODAL_CLOSE_DELAY_MS);
   };
 
-  // Khóa scroll khi modal mở & điều khiển animation
   useEffect(() => {
     if (selectedSection) {
       document.body.style.overflow = 'hidden';
@@ -199,7 +198,6 @@ const JobSection = () => {
     },
   ];
 
-  /** Xác định icon (YouTube vs Drive) dựa trên section title */
   const getMediaIcon = (sectionTitle: string) => {
     const isYoutube = sectionTitle === t('title1');
     return {
@@ -211,8 +209,6 @@ const JobSection = () => {
 
   return (
     <div id="job" className="h-screen w-full relative">
-      {/* Animations (.hover-sway, .continuousSway) đã chuyển sang main.css */}
-
       {/* ═══════════ MODAL CHI TIẾT ═══════════ */}
       {selectedSection && (
         <div
@@ -228,7 +224,6 @@ const JobSection = () => {
             }`}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Nút đóng */}
             <button
               className="absolute top-4 right-6 text-5xl font-light text-[#3C2F2F] hover:text-red-500 transition-colors duration-200 z-50 cursor-pointer"
               onClick={handleCloseModal}
@@ -236,16 +231,13 @@ const JobSection = () => {
               &times;
             </button>
 
-            {/* Tiêu đề */}
             <div className="flex-shrink-0 flex flex-col items-center mt-[-10px]">
               <h2 className="font-['Syne'] font-bold text-[48px] text-[#3C2F2F] uppercase tracking-wide">
                 {selectedSection.title}
               </h2>
             </div>
 
-            {/* Nội dung cuộn */}
             <div className="flex-1 overflow-y-auto overscroll-contain pr-4 custom-scrollbar flex flex-col gap-8 font-plus">
-              {/* Media */}
               <div className="w-full h-auto bg-[#1E1E1E] rounded-xl overflow-hidden flex-shrink-0 shadow-inner">
                 {selectedSection.modalVideo ? (
                   <video
@@ -269,7 +261,6 @@ const JobSection = () => {
                 )}
               </div>
 
-              {/* Link & Subtitle */}
               <div className="grid grid-cols-[max-content_1fr] w-full flex-shrink-0 items-center gap-12">
                 <div className="flex items-center gap-3 flex-shrink-0">
                   <span className="max-w-[300px] font-plus font-bold text-[28px] text-[#3C2F2F] whitespace-pre-line leading-tight">
@@ -305,7 +296,6 @@ const JobSection = () => {
                 />
               </div>
 
-              {/* Notes */}
               <div
                 className="text-[#3C2F2F] text-[18px] font-plus font-medium whitespace-pre-line text-left leading-[2.2] pb-10 flex-shrink-0"
                 dangerouslySetInnerHTML={{ __html: selectedSection.note }}
@@ -317,10 +307,11 @@ const JobSection = () => {
 
       {/* ═══════════ GIAO DIỆN CHÍNH ═══════════ */}
       <div className="relative w-[1440px] h-[900px] mx-auto flex flex-col justify-around items-center">
+        {/* CHỈNH SỬA: Thêm `animate-sway-x` cho title 1, 5, 3 */}
         {sectionsData.map((section, idx) => (
           <div
             key={idx}
-            className="cursor-pointer z-10 hover:opacity-90 transition-opacity"
+            className="cursor-pointer z-10 hover:opacity-90 transition-opacity animate-sway-x"
             onClick={() => setSelectedSection(section)}
           >
             <PhotoStack
@@ -349,8 +340,9 @@ const JobSection = () => {
           </h1>
         </div>
 
+        {/* CHỈNH SỬA: Thêm `transition-transform duration-300 hover:scale-105` cho title 4 */}
         <div
-          className="cursor-pointer z-10 hover:opacity-90 transition-opacity"
+          className="cursor-pointer z-10 hover:opacity-90 transition-all duration-300 hover:scale-105"
           onClick={() =>
             setSelectedSection({
               title: t('title4'),
@@ -372,8 +364,9 @@ const JobSection = () => {
           />
         </div>
 
+        {/* CHỈNH SỬA: Thêm `transition-transform duration-300 hover:scale-105` cho title 2 */}
         <div
-          className="cursor-pointer z-10 hover:opacity-90 transition-opacity"
+          className="cursor-pointer z-10 hover:opacity-90 transition-all duration-300 hover:scale-105"
           onClick={() =>
             setSelectedSection({
               title: t('title2'),
