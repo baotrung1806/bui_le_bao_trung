@@ -20,6 +20,7 @@ const JobSection = () => {
             href={card.href}
             title={card.title}
             className="relative z-30 translate-x-20 -translate-y-35 cursor-pointer"
+            classNameVideo={card.classNameVideo}
             hoveredCardId={hoveredCardId}
             onHoverChange={setHoveredCardId}
           />
