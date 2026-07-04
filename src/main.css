@@ -114,6 +114,34 @@ body {
   will-change: transform;
 }
 
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.job-gentle-float {
+  animation: gentleFloat 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.job-gentle-float-delay-1 {
+  animation-delay: 0.35s;
+}
+
+.job-gentle-float-delay-2 {
+  animation-delay: 0.7s;
+}
+
+.job-gentle-float-delay-3 {
+  animation-delay: 1.05s;
+}
+
 /* ─── MyselfInfo: Viết chữ từng ký tự ─────────────────────────────── */
 @keyframes writeLetter {
   0% {

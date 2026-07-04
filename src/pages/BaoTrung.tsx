@@ -10,17 +10,23 @@ export const BaoTrung = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <MySelfSection />
-      <img 
-        src={ropeImg}
-        alt="Rope"
-        className="block w-full"
-      />
-      <JobSection />
-      <img 
-        src={ropeImg}
-        alt="Rope"
-        className="mt-[-100px] block w-full"
-      />
+      <div className="relative z-0 w-full">
+        <img 
+          src={ropeImg}
+          alt="Rope"
+          className="block w-full"
+        />
+      </div>
+      <div className="relative z-10 w-full">
+        <JobSection />
+      </div>
+      <div className="relative z-0 w-full">
+        <img 
+          src={ropeImg}
+          alt="Rope"
+          className="mt-[-100px] block w-full"
+        />
+      </div>
       <ProjectSection />
       <img 
         src={ropeImg}
