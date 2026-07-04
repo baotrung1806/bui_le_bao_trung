@@ -1,6 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion';
 import Pick from '@/assets/images/job/pick.webp';
+import { cn } from '@/utils/cn';
 
 interface PhotoStackProps {
   cardId?: string;
@@ -9,6 +10,7 @@ interface PhotoStackProps {
   href?: string;
   title?: string;
   className?: string;
+  classNameVideo?: string;
   hoveredCardId?: string | null;
   onHoverChange?: (cardId: string | null) => void;
 }
@@ -62,7 +64,6 @@ const CARD_EFFECTS: Record<
     },
     media: {
       idle: {
-        filter: 'grayscale(1) saturate(0.9)',
         scale: 1,
       },
       hover: {
@@ -125,6 +126,7 @@ const PhotoStack: React.FC<PhotoStackProps> = ({
   href,
   title,
   className,
+  classNameVideo,
   hoveredCardId,
   onHoverChange,
 }) => {
@@ -258,7 +260,7 @@ const PhotoStack: React.FC<PhotoStackProps> = ({
             {mediaSrc ? (
               isVideoSrc ? (
                 <motion.video
-                  className="h-full w-full object-cover"
+                  className={cn('h-full w-full', classNameVideo)}
                   autoPlay
                   loop
                   muted
@@ -270,13 +272,7 @@ const PhotoStack: React.FC<PhotoStackProps> = ({
                   <source src={mediaSrc} type={resolvedVideoType} />
                 </motion.video>
               ) : (
-                <motion.img
-                  src={mediaSrc}
-                  alt={title}
-                  className="h-full w-full object-cover"
-                  animate={mediaAnimate}
-                  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                />
+                <h1>Video Null</h1>
               )
             ) : null}
 
