@@ -1,81 +1,37 @@
 import React from 'react';
+import Pick from '@/assets/images/job/pick.webp';
 
-// Định nghĩa kiểu dữ liệu cho từng object card bên trong mảng
-interface CardConfig {
-  rotateClass: string;
-  translateClass?: string;
-  bgClass?: string;
-  hasImg: boolean;
-  imgSrc?: string;
-  classNameImg?: string;
-}
-
-// Định nghĩa kiểu dữ liệu cho các Props của PhotoStack
 interface PhotoStackProps {
-  pickImg: string;
-  pickX: string;
-  pickY: string;
-  containerX: string;
-  containerY: string;
-  cards?: CardConfig[];
+  imageSrc?: string;
   title?: string;
   className?: string;
 }
 
-const PhotoStack: React.FC<PhotoStackProps> = ({
-  pickImg,
-  pickX,
-  pickY,
-  containerX,
-  containerY,
-  cards = [],
-  title,
-  className
-}) => {
+const PhotoStack: React.FC<PhotoStackProps> = ({ imageSrc, title, className }) => {
   return (
-    <div className="group">
-      {/* Ghim ảnh (pickImg) */}
-      <img
-        src={pickImg}
-        alt="Pick"
-        width={80}
-        height={80}
-        style={{
-          transform: `translate(${pickX}, ${pickY})`
-        }}
-        className="absolute z-[11]"
-      />
+    <div className={`relative inline-flex flex-col items-center ${className ?? ''}`}>
+      <div className="relative z-10 flex flex-col items-center">
+        <img
+          src={Pick}
+          alt="Clip"
+          className="absolute -top-[50px] left-1/2 z-20 w-[75px] -translate-x-1/2 select-none drop-shadow-[0_4px_5px_rgba(53,35,20,0.25)]"
+        />
 
-      {/* Cụm các tấm ảnh xếp chồng */}
-      <div
-        style={{
-          transform: `translate(${containerX}, ${containerY})`
-        }}
-        className="relative"
-      >
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className={`absolute w-70 h-95 bg-[#ededeb] p-5 pt-5 pb-14 rounded-[2px] 
-              shadow-[2px_4px_16px_rgba(0,0,0,0.12),-1px_2px_4px_rgba(0,0,0,0.05)] 
-              border border-stone-300/40 select-none ${card.rotateClass} ${card.translateClass || ''}`}
-          >
-            <div className={`relative w-full h-75 aspect-square shadow-[inset_0_1px_5px_rgba(0,0,0,0.1)] overflow-hidden flex items-center justify-center ${card.bgClass || 'bg-white'}`}>
-              {card.hasImg && (
-                <img src={card.imgSrc || ""} alt="Nội dung" className={`object-cover ${card.classNameImg || ''}`} />
-              )}
-            </div>
+        <div className="relative mt-[16px] flex h-[450px] w-[296px] items-center justify-center rounded-[2px] border border-[#ddd0c4]/85 bg-[linear-gradient(180deg,#f3f3f3_0%,#ebebeb_48%,#ebebeb_100%)] px-[14px] pb-[14px] pt-[18px] shadow-[0_18px_34px_rgba(58,41,29,0.18),0_3px_0_rgba(255,255,255,0.7)_inset]">
+          <div className="pointer-events-none absolute inset-[1px] rounded-[1px] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-18px_25px_rgba(95,66,41,0.05)]" />
+          <div className="pointer-events-none absolute inset-0 rounded-[2px] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.7),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(154,107,63,0.08),transparent_55%)] opacity-90" />
+
+          <div className="relative flex bottom-7 h-[350px] w-full items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#e6e4e1_0%,#d9d7d4_100%)] shadow-[inset_0_1px_6px_rgba(0,0,0,0.08)]">
+            {imageSrc ? (
+              <img src={imageSrc} alt={title} className="h-full w-full object-cover" />
+            ) : null}
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* Title */}
-      <p className={`absolute font-plus text-[36px] text-[#3C2F2F] z-1 ${className}`}>
-        {/* CHỈNH SỬA: Giữ nguyên title-shake-x, kết hợp với CSS bên dưới để chạy hiệu ứng */}
-        <span className="inline-block title-shake-x transition-transform duration-300">
-          {title}
-        </span>
-      </p>
+        <p className="z-9999 -mt-[53px] font-plus text-[28px] leading-none text-[#3C2F2F] [text-shadow:0_1px_0_rgba(255,255,255,0.35)]">
+          <span className="inline-block">{title}</span>
+        </p>
+      </div>
     </div>
   );
 };
